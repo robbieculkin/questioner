@@ -1,0 +1,11 @@
+.feed {
+  .feed-item {
+    &.left {
+      text-align: left;
+    }
+    &.right {
+      text-align: right;
+    }
+    margin-bottom: 10px;
+  }
+}

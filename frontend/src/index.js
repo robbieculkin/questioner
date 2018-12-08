@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import './fonts.css';
-import './index.css';
-import './shared.css';
+import './css/fonts.css';
+import './css/index.css';
+import './css/shared.css';
 import Home from './components/Home';
 
 import registerServiceWorker from './registerServiceWorker';
