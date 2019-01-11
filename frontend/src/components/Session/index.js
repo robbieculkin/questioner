@@ -3,8 +3,9 @@ import './index.scss';
 
 import QuestionAgent from '../../logic/questionAgent';
 
-import Entry from '../Entry';
-import Feed from '../Feed';
+// import Entry from '../Entry';
+// import Feed from '../Feed';
+import Card from '../Card';
 
 class Session extends Component {
   constructor(props) {
@@ -53,9 +54,12 @@ class Session extends Component {
 
     return (
       <div>
-        <Feed history={history} />
-        <Entry onTextEntry={this.handleTextEntry} />
+        <Card history={history} onTextEntry={this.handleTextEntry} />
       </div>
+      // <div>
+      //   <Feed history={history} />
+      //   <Entry onTextEntry={this.handleTextEntry} />
+      // </div>
     );
   }
 }
