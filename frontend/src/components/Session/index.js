@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './index.scss';
 
+import QuestionAgent from '../../logic/questionAgent';
+
 import Entry from '../Entry';
 import Feed from '../Feed';
 
@@ -8,22 +10,25 @@ class Session extends Component {
   constructor(props) {
     super(props);
 
+    const questionAgent = new QuestionAgent();
+
     this.state = {
       nextId: 1,
+      questionAgent,
       history: [
         {
           id: 0,
           fromUser: false,
-          text: 'Hello, how are you?'
+          text: questionAgent.getQuestion()
         }
-      ]
+      ],
     };
 
     this.handleTextEntry = this.handleTextEntry.bind(this);
   }
 
   handleTextEntry(text) {
-    const { history, nextId } = this.state;
+    const { history, nextId, questionAgent } = this.state;
 
     this.setState({
       history: [
@@ -32,9 +37,14 @@ class Session extends Component {
           id: nextId,
           text,
           fromUser: true
+        },
+        {
+          id: nextId + 1,
+          text: questionAgent.getQuestion(),
+          fromUser: false
         }
       ],
-      nextId: nextId + 1
+      nextId: nextId + 2
     });
   }
 

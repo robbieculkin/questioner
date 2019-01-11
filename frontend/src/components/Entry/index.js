@@ -6,28 +6,46 @@ class Entry extends Component {
     super(props);
 
     this.state = {
-      value: 'Enter text here...'
+      value: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleTextEntry = this.handleTextEntry.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({ value: e.target.value });
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleKeyPress(event) {
+    const { value } = this.state;
+
+    if (event.key === 'Enter') {
+      this.handleTextEntry(value);
+    }
+  }
+
+  handleTextEntry(value) {
+    const { onTextEntry } = this.props;
+
+    onTextEntry(value);
+    this.setState({ value: '' });
   }
 
   render() {
     const { value } = this.state;
-    const { onTextEntry } = this.props;
 
     return (
       <div className='entry'>
         <input
+          id='entryField'
           type='text'
+          value={value}
           onChange={this.handleChange}
-          placeholder={value}
+          onKeyPress={this.handleKeyPress}
         />
-        <button onClick={() => onTextEntry(value)}> Submit </button>
+        <button onClick={() => this.handleTextEntry(value)}> Submit </button>
       </div>
     );
   }
