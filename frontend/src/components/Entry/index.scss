@@ -1,3 +1,27 @@
 .entry {
+    width: 100%;
 
+    textarea {
+        /* Fix issues with Grammarly extension! */
+        /* Write JS to resize textarea when too many lines */
+        display: block;
+        min-height: 50px;
+        width: 100%;
+        margin-bottom: 10px;
+        border: 1px solid #aaaaaa;
+        border-radius: 5px;
+        resize: none;
+        overflow: hidden;
+        outline: none;
+        font-size: 18px;
+    }
+
+    button {
+        width: 100px;
+        height: 40px;
+        outline: none;
+        border: 1px solid #aaaaaa;
+        border-radius: 0;
+        font-size: 20px;
+    }
 }

@@ -9,7 +9,9 @@ const Card = ({ history, onTextEntry }) =>
       <div className='question'>
         {history[history.length - 1].text}
       </div>
-      <Entry onTextEntry={onTextEntry} />
+      <div className='response'>
+        <Entry onTextEntry={onTextEntry} />
+      </div>
     </div>
   </div>
 

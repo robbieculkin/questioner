@@ -38,14 +38,14 @@ class Entry extends Component {
 
     return (
       <div className='entry'>
-        <input
+        <textarea
           id='entryField'
           type='text'
           value={value}
           onChange={this.handleChange}
-          onKeyPress={this.handleKeyPress}
+          /* onKeyPress={this.handleKeyPress} */
         />
-        <button onClick={() => this.handleTextEntry(value)}> Submit </button>
+        <button onClick={() => this.handleTextEntry(value)}> Next </button>
       </div>
     );
   }
