@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './index.scss';
 
 import QuestionAgent from '../../logic/questionAgent';
@@ -20,12 +21,29 @@ class Session extends Component {
         {
           id: 0,
           fromUser: false,
-          text: questionAgent.getQuestion()
+          text: 'NO QUESTION GIVEN'
         }
       ],
     };
 
     this.handleTextEntry = this.handleTextEntry.bind(this);
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:5000/api/v0/question')
+      .then(res => {
+          const data = res.data;
+
+          this.setState({
+            history: [
+              {
+                id: 0,
+                text: data.question,
+                fromUser: false
+              }
+            ]
+          })
+      });
   }
 
   handleTextEntry(text) {
