@@ -29,7 +29,7 @@ def create_app(test_config=None):
 
     # a simple page that says hello
     @app.route('/api/v0/question')
-    def hello():
+    def _hello():
         data = {
             'id': 9,
             'question': 'Who are you?'
