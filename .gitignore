@@ -4,6 +4,9 @@ transcripts/
 # dependencies
 /frontend/node_modules
 
+# flask
+instance/
+
 # testing
 /frontend/coverage
 __snapshots__
