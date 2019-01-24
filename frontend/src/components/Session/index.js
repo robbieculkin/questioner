@@ -30,7 +30,7 @@ class Session extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/api/v0/question')
+    axios.get('http://localhost:5000/api/v0/questions')
       .then(res => {
           const data = res.data;
 

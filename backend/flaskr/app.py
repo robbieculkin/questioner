@@ -1,8 +1,9 @@
 import os
-import json
 
 from flask import Flask
 from flask_cors import CORS
+
+from routes import routes
 
 
 def create_app(test_config=None):
@@ -27,13 +28,7 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/api/v0/question')
-    def _hello():
-        data = {
-            'id': 9,
-            'question': 'Who are you?'
-        }
-        return json.dumps(data)
-
     return app
+
+app = create_app()
+app.register_blueprint(routes, url_prefix='/api/v0/')
