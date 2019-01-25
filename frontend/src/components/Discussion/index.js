@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import './index.scss';
 
 import QuestionAgent from '../../logic/questionAgent';
 
-// import Entry from '../Entry';
-// import Feed from '../Feed';
 import Card from '../Card';
 
-class Session extends Component {
+class Discussion extends Component {
   constructor(props) {
     super(props);
 
@@ -71,15 +71,19 @@ class Session extends Component {
     const { history } = this.state;
 
     return (
-      <div>
-        <Card history={history} onTextEntry={this.handleTextEntry} />
+      <div className='container centered'>
+        <div className='title'>
+          <h1>Questioner</h1>
+        </div>
+        <br />
+        <div>
+          <Card history={history} onTextEntry={this.handleTextEntry} />
+        </div>
+        <br />
+        <Link to='/report'>End Discussion</Link>
       </div>
-      // <div>
-      //   <Feed history={history} />
-      //   <Entry onTextEntry={this.handleTextEntry} />
-      // </div>
     );
   }
 }
 
-export default Session;
+export default Discussion;

@@ -24,3 +24,7 @@ body {
   text-decoration: none;
   color: black;
 }
+
+.title {
+  text-align: center;
+}
