@@ -1,11 +1,26 @@
 .feed {
+  padding: 40px;
+
   .feed-item {
+    display: flex;
     &.left {
-      text-align: left;
+      justify-content: flex-start;
+      .text {
+        background: #eee;
+      }
     }
     &.right {
-      text-align: right;
+      justify-content: flex-end;
+      .text {
+        background: #007aff;
+        color: #fff;
+      }
     }
-    margin-bottom: 10px;
+    .text {
+      max-width: 350px;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
   }
 }

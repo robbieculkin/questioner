@@ -33,8 +33,9 @@ class Report extends Component {
         <div className='title'>
           <h1>Discussion Report</h1>
         </div>
-        <br />
-        <Feed history={history} />
+        <div className='tile'>
+          <Feed history={history} />
+        </div>
       </div>
     );
   }

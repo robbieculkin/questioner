@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import './css/fonts.css';
-import './css/index.css';
-import './css/shared.css';
+import './css/fonts.scss';
+import './css/index.scss';
+import './css/shared.scss';
 
 import Home from './components/Home';
 import Discussion from './components/Discussion';

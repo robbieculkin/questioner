@@ -14,8 +14,9 @@ const Home = () =>
         literary discussion in a seminar style.
       </p>
     </div>
-    <br />
-    <Link to='/discussion'>Start a Discussion</Link>
+    <Link to='/discussion' className='link'>
+      <div className='main-button tile'>Start a Discussion</div>
+    </Link>
   </div>
 
 export default Home;

@@ -75,12 +75,12 @@ class Discussion extends Component {
         <div className='title'>
           <h1>Questioner</h1>
         </div>
-        <br />
-        <div>
+        <div className='tile'>
           <Card history={history} onTextEntry={this.handleTextEntry} />
         </div>
-        <br />
-        <Link to='/report'>End Discussion</Link>
+        <Link to='/report' className='link'>
+          <div className='main-button tile'>End Discussion</div>
+        </Link>
       </div>
     );
   }
