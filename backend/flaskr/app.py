@@ -2,6 +2,7 @@ import os
 
 from flask import Flask
 from flask_cors import CORS
+from flask_pymongo import PyMongo
 
 from routes import routes
 
@@ -9,7 +10,6 @@ from routes import routes
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
-    CORS(app)
     app.config.from_mapping(
         SECRET_KEY='dev',  # override for deployment to some random value
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
@@ -31,4 +31,9 @@ def create_app(test_config=None):
     return app
 
 app = create_app()
+CORS(app)
+
+app.config["MONGO_URI"] = ""
+mongo = PyMongo(app)
+
 app.register_blueprint(routes, url_prefix='/api/v0/')
