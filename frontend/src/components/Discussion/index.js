@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import './index.scss';
 
@@ -32,22 +32,44 @@ class Discussion extends Component {
   componentDidMount() {
     axios.get('http://localhost:5000/api/v0/questions')
       .then(res => {
-          const data = res.data;
+        const data = res.data;
 
-          this.setState({
-            history: [
-              {
-                id: 0,
-                text: data.question,
-                fromUser: false
-              }
-            ]
-          })
+        this.setState({
+          history: [
+            {
+              id: 0,
+              text: data.question,
+              fromUser: false
+            }
+          ]
+        });
+      })
+      .catch(error => {
+        console.log(error);
       });
   }
 
   handleTextEntry(text) {
     const { history, nextId, questionAgent } = this.state;
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
+        'Access-Control-Max-Age': '3600',
+        'Access-Control-Allow-Headers': 'x-requested-by'
+      }
+    }
+    axios.post('http://localhost:5000/api/v0/response',
+               {'message': '(hello mongo!)', 'author': 'Tim!'},
+               config)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(error => {
+        console.log(error);
+      });
 
     this.setState({
       history: [

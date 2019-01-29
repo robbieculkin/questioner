@@ -7,9 +7,6 @@ transcripts/
 # flask
 instance/
 
-# mongodb data
-/data/
-
 # testing
 /frontend/coverage
 __snapshots__

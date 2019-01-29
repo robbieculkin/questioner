@@ -6,7 +6,7 @@ const terminalResponse = 'Thank you for our discussion. Goodbye!';
 
 class QuestionAgent {
     getQuestion() {
-        axios.get('http://localhost:5000/api/v0/question')
+        axios.get('http://localhost:5000/api/v0/questions')
             .then(res => {
                 const question = res.question;
                 return question;
