@@ -1,4 +1,3 @@
-source env/bin/activate
 export FLASK_APP=flaskr
 export FLASK_ENV=development
-python3 -m flask run
+env/bin/python3 -m flask run
