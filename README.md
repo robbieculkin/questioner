@@ -41,7 +41,7 @@ deactivate
 ```
 Finally, run the script to start Flask: `./run_flask.sh`. The flask
 server can be reached by default with API routes at
-[http://localhost:5000/api/v0/]
+<http://localhost:5000/api/v0/>
 
 ### React
 To get React started, you will need to have `nodejs` installed. Then,
@@ -53,7 +53,7 @@ npm install
 npm start
 ```
 This should open the web application in a new tab at
-[http://localhost:3000/].
+<http://localhost:3000/>.
 
 
 ## Flask API
