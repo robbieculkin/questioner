@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import './css/fonts.scss';
-import './css/index.scss';
-import './css/shared.scss';
+import './style/fonts.scss';
+import './style/index.scss';
+import './style/shared.scss';
 
-import Home from './components/Home';
-import Discussion from './components/Discussion';
-import Report from './components/Report';
-import NotFound from './components/NotFound';
+import Home from './components/welcome_page/Home';
+import Discussion from './components/discussion_page/Discussion';
+import Report from './components/report_page/Report';
+import NotFound from './components/error_page/NotFound';
 
 import registerServiceWorker from './registerServiceWorker';
 

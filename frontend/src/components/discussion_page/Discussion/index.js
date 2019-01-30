@@ -7,7 +7,7 @@ import './index.scss';
 
 import Card from '../Card';
 
-import { post_config } from '../../config/headers';
+import { post_config } from '../../../config/headers';
 
 class Discussion extends Component {
   constructor(props) {
