@@ -19,9 +19,11 @@ class Entry extends Component {
   }
 
   handleKeyPress(event) {
+    // Submit textentry when <ENTER> is pressed (instead of newline)
     const { value } = this.state;
 
     if (event.key === 'Enter') {
+      event.preventDefault();
       this.handleTextEntry(value);
     }
   }
@@ -43,9 +45,9 @@ class Entry extends Component {
           type='text'
           value={value}
           onChange={this.handleChange}
-          /* onKeyPress={this.handleKeyPress} */
+          onKeyPress={this.handleKeyPress}
         />
-        <button onClick={() => this.handleTextEntry(value)}> Next </button>
+        <button onClick={() => this.handleTextEntry(value)}>Next</button>
       </div>
     );
   }

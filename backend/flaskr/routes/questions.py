@@ -1,16 +1,16 @@
-import json
-
+from bson.json_util import dumps
 from flask import request
 
+import flaskr
 from . import routes
 
 
 @routes.route('/questions')
 def questions():
-    username = request.args.get('username')
+    # db = flaskr.mongo.db
+    session_id = request.args.get('sessionId')
 
     data = {
-        'id': 9,
-        'question': f'Hello, {username}'
+        'question': f'Hello, {session_id}.'
     }
-    return json.dumps(data)
+    return dumps(data)

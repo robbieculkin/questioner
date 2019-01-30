@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import uuidv1 from 'uuid';
 
 import './index.scss';
 
-import QuestionAgent from '../../logic/questionAgent';
-
 import Card from '../Card';
+
+import { post_config } from '../../config/headers';
 
 class Discussion extends Component {
   constructor(props) {
     super(props);
 
-    const questionAgent = new QuestionAgent();
-
     this.state = {
-      nextId: 1,
-      questionAgent,
+      sessionId: uuidv1(),
       history: [
         {
-          id: 0,
+          msgId: 0,
           fromUser: false,
-          text: 'NO QUESTION GIVEN'
+          text: 'Loading...'
         }
       ],
     };
@@ -30,14 +28,18 @@ class Discussion extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/api/v0/questions')
+    const { sessionId } = this.state;
+
+    axios.get('http://localhost:5000/api/v0/questions', {
+        params: { sessionId }
+      })
       .then(res => {
         const data = res.data;
 
         this.setState({
           history: [
             {
-              id: 0,
+              msgId: uuidv1(),
               text: data.question,
               fromUser: false
             }
@@ -46,24 +48,36 @@ class Discussion extends Component {
       })
       .catch(error => {
         console.log(error);
+        this.setState({
+          history: [
+            {
+              msgId: uuidv1(),
+              text: 'Oops, something went wrong! Please try again.',
+              fromUser: false
+            }
+          ]
+        })
       });
   }
 
   handleTextEntry(text) {
-    const { history, nextId, questionAgent } = this.state;
-
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
-        'Access-Control-Max-Age': '3600',
-        'Access-Control-Allow-Headers': 'x-requested-by'
+    const { sessionId, history } = this.state;
+    const updatePayload = {
+      session: {
+        sessionId,
+        discussion: [
+          ...history,
+          {
+            msgId: uuidv1(),
+            text,
+            fromUser: true
+          }
+        ]
       }
     }
+
     axios.post('http://localhost:5000/api/v0/response',
-               {'message': '(hello mongo!)', 'author': 'Tim!'},
-               config)
+               updatePayload, post_config)
       .then(res => {
         console.log(res);
       })
@@ -73,24 +87,17 @@ class Discussion extends Component {
 
     this.setState({
       history: [
-        ...history,
         {
-          id: nextId,
-          text,
-          fromUser: true
-        },
-        {
-          id: nextId + 1,
-          text: questionAgent.getQuestion(),
+          msgId: uuidv1(),
+          text: 'next question here',
           fromUser: false
         }
       ],
-      nextId: nextId + 2
     });
   }
 
   render() {
-    const { history } = this.state;
+    const { sessionId, history } = this.state;
 
     return (
       <div className='container centered'>
@@ -100,7 +107,7 @@ class Discussion extends Component {
         <div className='tile'>
           <Card history={history} onTextEntry={this.handleTextEntry} />
         </div>
-        <Link to='/report' className='link'>
+        <Link to={{ pathname: '/report', state: { sessionId } }} className='link'>
           <div className='main-button tile'>End Discussion</div>
         </Link>
       </div>
