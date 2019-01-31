@@ -5,7 +5,7 @@ import './index.scss';
 
 import Feed from '../Feed';
 
-import { errorState } from '../../../data/error-data';
+import { errorState, emptyState } from '../../../data/error-data';
 import { REPORT_URI } from '../../../config/api';
 
 class Report extends Component {
@@ -25,7 +25,10 @@ class Report extends Component {
     axios.get(REPORT_URI, { params: { sessionId } })
       .then(res => {
         if (!this._mounted) return;
-        this.setState({ history: res.data.discussion });
+        if ('discussion' in res.data)
+          this.setState({ history: res.data.discussion });
+        else
+          this.setState(emptyState);
       })
       .catch(error => {
         if (!this._mounted) return;
