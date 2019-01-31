@@ -8,6 +8,8 @@ import './index.scss';
 import Card from '../Card';
 
 import { post_config } from '../../../config/headers';
+import { errorState } from '../../../data/error-data';
+import { RESPONSE_URI, QUESTIONS_URI } from '../../../config/api';
 
 class Discussion extends Component {
   constructor(props) {
@@ -29,35 +31,31 @@ class Discussion extends Component {
 
   componentDidMount() {
     const { sessionId } = this.state;
+    this._mounted = true;
 
-    axios.get('http://localhost:5000/api/v0/questions', {
-        params: { sessionId }
-      })
+    axios.get(QUESTIONS_URI, { params: { sessionId } })
       .then(res => {
-        const data = res.data;
-
+        if (!this._mounted) return;
         this.setState({
           history: [
             {
               msgId: uuidv1(),
-              text: data.question,
+              text: res.data.question,
               fromUser: false
             }
           ]
         });
       })
       .catch(error => {
+        if (!this._mounted) return;
+        console.log('ERROR!!!');
         console.log(error);
-        this.setState({
-          history: [
-            {
-              msgId: uuidv1(),
-              text: 'Oops, something went wrong! Please try again.',
-              fromUser: false
-            }
-          ]
-        })
+        this.setState(errorState);
       });
+  }
+
+  componentWillUnmount() {
+    this._mounted = false;
   }
 
   handleTextEntry(text) {
@@ -76,24 +74,31 @@ class Discussion extends Component {
       }
     }
 
-    axios.post('http://localhost:5000/api/v0/response',
-               updatePayload, post_config)
-      .then(res => {
-        console.log(res);
+    // POST question and user response
+    axios.post(RESPONSE_URI, updatePayload, post_config)
+      .then(() => {
+        // GET next question
+        axios.get(QUESTIONS_URI, { params: { sessionId } })
+          .then(res => {
+            this.setState({
+              history: [
+                {
+                  msgId: uuidv1(),
+                  text: res.data.question,
+                  fromUser: false
+                }
+              ]
+            });
+          })
+          .catch(error => {
+            console.log(error);
+            this.setState(errorState);
+          });
       })
       .catch(error => {
         console.log(error);
+        this.setState(errorState);
       });
-
-    this.setState({
-      history: [
-        {
-          msgId: uuidv1(),
-          text: 'next question here',
-          fromUser: false
-        }
-      ],
-    });
   }
 
   render() {

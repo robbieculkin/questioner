@@ -43,6 +43,7 @@ class Entry extends Component {
         <textarea
           id='entryField'
           type='text'
+          autoFocus
           value={value}
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}
