@@ -2,7 +2,7 @@ from bson.json_util import dumps
 from flask import request
 
 import flaskr
-import backend.src.question_agent.agent as agent
+import src.question_agent.agent as agent
 from . import routes
 
 
