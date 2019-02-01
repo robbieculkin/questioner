@@ -16,6 +16,7 @@ __snapshots__
 
 # VS Code
 *.code-workspace
+.vscode/
 
 # misc
 .DS_Store
