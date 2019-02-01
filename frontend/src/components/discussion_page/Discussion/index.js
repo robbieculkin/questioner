@@ -17,6 +17,7 @@ class Discussion extends Component {
 
     this.state = {
       sessionId: uuidv1(),
+      selectedPlay: props.location.state.selectedPlay,
       history: [
         {
           msgId: 0,
@@ -59,10 +60,11 @@ class Discussion extends Component {
   }
 
   handleTextEntry(text) {
-    const { sessionId, history } = this.state;
+    const { sessionId, selectedPlay, history } = this.state;
     const updatePayload = {
       session: {
         sessionId,
+        selectedPlay,
         discussion: [
           ...history,
           {
@@ -112,7 +114,8 @@ class Discussion extends Component {
         <div className='tile'>
           <Card history={history} onTextEntry={this.handleTextEntry} />
         </div>
-        <Link to={{ pathname: '/report', state: { sessionId } }} className='link'>
+        <Link to={{ pathname: '/report', state: { sessionId } }}
+              className='link'>
           <div className='main-button tile'>End Discussion</div>
         </Link>
       </div>

@@ -15,6 +15,7 @@ class Report extends Component {
 
     this.state = {
       sessionId: props.location.state.sessionId,
+      selectedPlay: 'Loading...',
       history: []
     };
   }
@@ -26,10 +27,14 @@ class Report extends Component {
     axios.get(REPORT_URI, { params: { sessionId } })
       .then(res => {
         if (!this._mounted) return;
-        if ('discussion' in res.data)
-          this.setState({ history: res.data.discussion });
-        else
+        if ('discussion' in res.data) {
+          this.setState({
+            selectedPlay: res.data.selectedPlay,
+            history: res.data.discussion
+          });
+        } else {
           this.setState(emptyState);
+        }
       })
       .catch(error => {
         if (!this._mounted) return;
@@ -43,12 +48,16 @@ class Report extends Component {
   }
 
   render() {
-    const { history } = this.state;
+    const { sessionId, selectedPlay, history } = this.state;
 
     return (
       <div className='container centered'>
         <div className='title'>
           <h1>Discussion Report</h1>
+        </div>
+        <div className='details'>
+          <p>Session ID: {sessionId}</p>
+          <p>Selected play: {selectedPlay}</p>
         </div>
         <div className='tile'>
           <Feed history={history} />

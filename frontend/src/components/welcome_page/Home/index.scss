@@ -1,0 +1,15 @@
+.home {
+  .select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .select {
+      outline: none;
+      height: 32px;
+      padding: 5px;
+      background: #fff;
+      border: none;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+}
