@@ -11,4 +11,4 @@ def report():
     session_id = request.args.get('sessionId')
 
     data = db.discussions.find_one({'sessionId': session_id})
-    return dumps(data) if data else None
+    return dumps(data) if data else dumps({})

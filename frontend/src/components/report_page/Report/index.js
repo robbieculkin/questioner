@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import uuidv1 from 'uuid';
 
 import './index.scss';
 
 import Feed from '../Feed';
+
+import { errorState, emptyState } from '../../../data/error-data';
+import { REPORT_URI } from '../../../config/api';
 
 class Report extends Component {
   constructor(props) {
@@ -18,30 +20,25 @@ class Report extends Component {
 
   componentDidMount() {
     const { sessionId } = this.state;
+    this._mounted = true;
 
-    axios.get('http://localhost:5000/api/v0/report', {
-        params: { sessionId }
-      })
+    axios.get(REPORT_URI, { params: { sessionId } })
       .then(res => {
-        const data = res.data;
-        console.log(data.discussion);
-
-        this.setState({
-          history: data.discussion
-        })
+        if (!this._mounted) return;
+        if ('discussion' in res.data)
+          this.setState({ history: res.data.discussion });
+        else
+          this.setState(emptyState);
       })
       .catch(error => {
+        if (!this._mounted) return;
         console.log(error);
-        this.setState({
-          history: [
-            {
-              msgId: uuidv1(),
-              text: 'Oops, something went wrong! Please try again.',
-              fromUser: false
-            }
-          ]
-        })
+        this.setState(errorState);
       });
+  }
+
+  componentWillUnmount() {
+    this._mounted = false;
   }
 
   render() {
