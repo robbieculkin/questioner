@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './index.scss';
@@ -52,6 +53,9 @@ class Report extends Component {
         <div className='tile'>
           <Feed history={history} />
         </div>
+        <Link to='/' className='link'>
+          <div className='main-button tile'>Home</div>
+        </Link>
       </div>
     );
   }
