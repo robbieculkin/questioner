@@ -4,6 +4,7 @@ Example mongodb record format:
 {
     "session": {
         "sessionId": "16c209bc-42ca-4c22-9e80-172c1cf1cd51",
+        "selectedPlay": "All's Well That Ends Well",
         "discussion": [
             {
                 "msgId": "fc9e81ac-100b-45e2-aae0-393c65f500d8",
