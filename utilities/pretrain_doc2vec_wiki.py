@@ -2,8 +2,15 @@ import multiprocessing
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from gensim.corpora.wikicorpus import WikiCorpus
 
-cores = multiprocessing.cpu_count()
-wikipedia = WikiCorpus('../data/enwiki-latest-pages-articles.xml.bz2')
+def fprint(msg):
+    with open('log.txt', 'w+') as fp:
+        fp.write(str(msg) + '\n')
+
+fprint('START SCRIPT')
+cores = multiprocessing.cpu_count() - 2
+fprint(f'USING CORES: {cores}')
+wikipedia = WikiCorpus('../backend/data/enwiki-latest-pages-articles.xml.bz2')
+fprint('CORPUS FORMED')
 
 #build iterator
 class TaggedWikiDocument(object):
@@ -15,18 +22,23 @@ class TaggedWikiDocument(object):
             yield TaggedDocument(content, [title])
 
 documents = TaggedWikiDocument(wikipedia)
+fprint('TAGGED DOCUMENT')
+
 models = [
     # PV-DBOW
     Doc2Vec(dm=0, dbow_words=1, vector_size=200, window=8, min_count=19, epochs=10, workers=cores),
     # PV-DM w/average
     Doc2Vec(dm=1, dm_mean=1, vector_size=200, window=8, min_count=19, epochs=10, workers=cores),
 ]
+fprint('CREATED MODELS')
 
 models[0].build_vocab(documents)
-print(str(models[0]))
+fprint(str(models[0]))
 models[1].reset_from(models[0])
-print(str(models[1]))
+fprint(str(models[1]))
 
-for model in models:
+for i, model in enumerate(models):
+    fprint(f'TRAINING MODEL #{i}')
     model.train(documents, total_examples=model.corpus_count, epochs=model.iter)
+    fprint(f'SAVING MODEL #{i}')
     model.save(str(model))

@@ -18,6 +18,9 @@ __snapshots__
 *.code-workspace
 .vscode/
 
+# Large corpus
+*.bz2
+
 # misc
 .DS_Store
 env/
