@@ -8,7 +8,7 @@ import './index.scss';
 import Card from '../Card';
 
 import { post_config } from '../../../config/headers';
-import { errorState } from '../../../data/error-data';
+import { errorState } from '../../../data/errorData';
 import { RESPONSE_URI, QUESTIONS_URI } from '../../../config/api';
 
 class Discussion extends Component {

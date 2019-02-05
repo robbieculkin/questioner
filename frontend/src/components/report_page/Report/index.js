@@ -6,7 +6,7 @@ import './index.scss';
 
 import Feed from '../Feed';
 
-import { errorState, emptyState } from '../../../data/error-data';
+import { errorState, emptyState } from '../../../data/errorData';
 import { REPORT_URI } from '../../../config/api';
 
 class Report extends Component {
