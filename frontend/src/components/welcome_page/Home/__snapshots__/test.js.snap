@@ -300,12 +300,14 @@ exports[`Home should render correctly without props 1`] = `
   </div>
   <Link
     className="link"
+    onClick={[Function]}
     replace={false}
     to={
       Object {
         "pathname": "/discussion",
         "state": Object {
           "selectedPlay": "All's Well That Ends Well",
+          "sessionId": "123uuid",
         },
       }
     }

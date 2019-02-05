@@ -27,12 +27,13 @@ class Report extends Component {
 
     axios.get(REPORT_URI, { params: { sessionId } })
       .then(res => {
-        if (!this._mounted) return;
-        if ('discussion' in res.data) {
-          this.setState({
-            selectedPlay: res.data.selectedPlay,
-            history: res.data.discussion
-          });
+        if (!this._mounted)
+          return;
+
+        const { selectedPlay, discussion } = res.data;
+        this.setState({ selectedPlay });
+        if (discussion !== undefined && res.data.discussion.length > 0) {
+          this.setState({  history: res.data.discussion });
         } else {
           this.setState(emptyState);
         }

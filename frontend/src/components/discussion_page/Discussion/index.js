@@ -17,7 +17,7 @@ class Discussion extends Component {
     super(props);
 
     this.state = {
-      sessionId: uuidv1(),
+      sessionId: props.location.state.sessionId,
       selectedPlay: props.location.state.selectedPlay,
       history: [
         {
@@ -126,6 +126,7 @@ class Discussion extends Component {
 Discussion.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
+      sessionId: PropTypes.string,
       selectedPlay: PropTypes.string
     })
   })
