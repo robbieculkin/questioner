@@ -31,6 +31,8 @@ class Entry extends Component {
 
   handleTextEntry(value) {
     const { onTextEntry } = this.props;
+    if (value === '')
+      return;
 
     onTextEntry(value);
     this.setState({ value: '' });

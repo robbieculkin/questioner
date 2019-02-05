@@ -12,6 +12,7 @@ describe('Entry', () => {
     const onTextEntryFn = jest.fn();
     const component = shallow(<Entry onTextEntry={onTextEntryFn} />);
 
+    component.setState({ value: 'test' });
     component
       .find('button')
       .simulate('click');
@@ -23,6 +24,7 @@ describe('Entry', () => {
     const onTextEntryFn = jest.fn();
     const component = mount(<Entry onTextEntry={onTextEntryFn} />);
 
+    component.setState({ value: 'test' });
     component
       .find('textarea')
       .simulate('keypress', { key: 'Enter' });

@@ -6,7 +6,7 @@ exports[`Entry should call props fn on pressing <ENTER> 1`] = `
     [MockFunction] {
       "calls": Array [
         Array [
-          "",
+          "test",
         ],
       ],
       "results": Array [
