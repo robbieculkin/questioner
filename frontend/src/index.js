@@ -6,6 +6,7 @@ import './style/fonts.scss';
 import './style/index.scss';
 import './style/shared.scss';
 
+import PrivateRoute from './components/routing/PrivateRoute';
 import Home from './components/welcome_page/Home';
 import Discussion from './components/discussion_page/Discussion';
 import Report from './components/report_page/Report';
@@ -18,8 +19,8 @@ ReactDOM.render((
     <div>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/discussion' component={Discussion} />
-        <Route path='/report' component={Report} />
+        <PrivateRoute path='/discussion' component={Discussion} />
+        <PrivateRoute path='/report' component={Report} />
         <Route component={NotFound} />
       </Switch>
     </div>
