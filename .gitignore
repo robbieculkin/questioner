@@ -9,7 +9,6 @@ instance/
 
 # testing
 /frontend/coverage
-__snapshots__
 
 # production
 /frontend/build

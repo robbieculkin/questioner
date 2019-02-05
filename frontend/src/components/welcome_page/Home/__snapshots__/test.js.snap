@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render correctly without props 1`] = `
+<div
+  className="container centered home"
+>
+  <div
+    className="title"
+  >
+    <h1>
+      Questioner
+    </h1>
+  </div>
+  <div>
+    <p>
+      Welcome to Questioner, a conversational AI to promote literary discussion in a seminar style.
+    </p>
+    <p>
+      Please select the Shakespeare play that you would like to discuss.
+    </p>
+    <div
+      className="select-container"
+    >
+      <select
+        className="select"
+        onChange={[Function]}
+        value="All's Well That Ends Well"
+      >
+        <option
+          className="option"
+          key="0"
+          value="All's Well That Ends Well"
+        >
+          All's Well That Ends Well
+        </option>
+        <option
+          className="option"
+          key="1"
+          value="Antony and Cleopatra"
+        >
+          Antony and Cleopatra
+        </option>
+        <option
+          className="option"
+          key="2"
+          value="As You Like It"
+        >
+          As You Like It
+        </option>
+        <option
+          className="option"
+          key="3"
+          value="The Comedy of Errors"
+        >
+          The Comedy of Errors
+        </option>
+        <option
+          className="option"
+          key="4"
+          value="Coriolanus"
+        >
+          Coriolanus
+        </option>
+        <option
+          className="option"
+          key="5"
+          value="Cymbeline"
+        >
+          Cymbeline
+        </option>
+        <option
+          className="option"
+          key="6"
+          value="Hamlet"
+        >
+          Hamlet
+        </option>
+        <option
+          className="option"
+          key="7"
+          value="Henry IV, Part 1"
+        >
+          Henry IV, Part 1
+        </option>
+        <option
+          className="option"
+          key="8"
+          value="Henry IV Part 2"
+        >
+          Henry IV Part 2
+        </option>
+        <option
+          className="option"
+          key="9"
+          value="Henry V"
+        >
+          Henry V
+        </option>
+        <option
+          className="option"
+          key="10"
+          value="Henry VI Part 1"
+        >
+          Henry VI Part 1
+        </option>
+        <option
+          className="option"
+          key="11"
+          value="Henry VI Part 2"
+        >
+          Henry VI Part 2
+        </option>
+        <option
+          className="option"
+          key="12"
+          value="Henry VI Part 3"
+        >
+          Henry VI Part 3
+        </option>
+        <option
+          className="option"
+          key="13"
+          value="Henry VIII"
+        >
+          Henry VIII
+        </option>
+        <option
+          className="option"
+          key="14"
+          value="Julius Caesar"
+        >
+          Julius Caesar
+        </option>
+        <option
+          className="option"
+          key="15"
+          value="King John"
+        >
+          King John
+        </option>
+        <option
+          className="option"
+          key="16"
+          value="King Lear"
+        >
+          King Lear
+        </option>
+        <option
+          className="option"
+          key="17"
+          value="Love's Labours Lost"
+        >
+          Love's Labours Lost
+        </option>
+        <option
+          className="option"
+          key="18"
+          value="Macbeth"
+        >
+          Macbeth
+        </option>
+        <option
+          className="option"
+          key="19"
+          value="Measure for Measure"
+        >
+          Measure for Measure
+        </option>
+        <option
+          className="option"
+          key="20"
+          value="The Merchant of Venice"
+        >
+          The Merchant of Venice
+        </option>
+        <option
+          className="option"
+          key="21"
+          value="The Merry Wives of Windsor"
+        >
+          The Merry Wives of Windsor
+        </option>
+        <option
+          className="option"
+          key="22"
+          value="A Midsummer Night’s Dream"
+        >
+          A Midsummer Night’s Dream
+        </option>
+        <option
+          className="option"
+          key="23"
+          value="Much Ado About Nothing"
+        >
+          Much Ado About Nothing
+        </option>
+        <option
+          className="option"
+          key="24"
+          value="Othello"
+        >
+          Othello
+        </option>
+        <option
+          className="option"
+          key="25"
+          value="Pericles"
+        >
+          Pericles
+        </option>
+        <option
+          className="option"
+          key="26"
+          value="Richard II"
+        >
+          Richard II
+        </option>
+        <option
+          className="option"
+          key="27"
+          value="Richard III"
+        >
+          Richard III
+        </option>
+        <option
+          className="option"
+          key="28"
+          value="Romeo and Juliet"
+        >
+          Romeo and Juliet
+        </option>
+        <option
+          className="option"
+          key="29"
+          value="Shakespeare's Sonnets"
+        >
+          Shakespeare's Sonnets
+        </option>
+        <option
+          className="option"
+          key="30"
+          value="The Taming of the Shrew"
+        >
+          The Taming of the Shrew
+        </option>
+        <option
+          className="option"
+          key="31"
+          value="The Tempest"
+        >
+          The Tempest
+        </option>
+        <option
+          className="option"
+          key="32"
+          value="Timon of Athens"
+        >
+          Timon of Athens
+        </option>
+        <option
+          className="option"
+          key="33"
+          value="Titus Andronicus"
+        >
+          Titus Andronicus
+        </option>
+        <option
+          className="option"
+          key="34"
+          value="Troilus and Cressida"
+        >
+          Troilus and Cressida
+        </option>
+        <option
+          className="option"
+          key="35"
+          value="Twelfth Night"
+        >
+          Twelfth Night
+        </option>
+        <option
+          className="option"
+          key="36"
+          value="The Two Gentlemen of Verona"
+        >
+          The Two Gentlemen of Verona
+        </option>
+        <option
+          className="option"
+          key="37"
+          value="The Winter's Tale"
+        >
+          The Winter's Tale
+        </option>
+      </select>
+    </div>
+    <p>
+      Press the button below to start a discussion!
+    </p>
+  </div>
+  <Link
+    className="link"
+    replace={false}
+    to={
+      Object {
+        "pathname": "/discussion",
+        "state": Object {
+          "selectedPlay": "All's Well That Ends Well",
+        },
+      }
+    }
+  >
+    <div
+      className="main-button tile"
+    >
+      Start a Discussion
+    </div>
+  </Link>
+</div>
+`;

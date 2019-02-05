@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Report should render correctly 1`] = `
+<div
+  className="container centered"
+>
+  <div
+    className="title"
+  >
+    <h1>
+      Discussion Report
+    </h1>
+  </div>
+  <div
+    className="details"
+  >
+    <p>
+      Session ID: 
+      123uuid
+    </p>
+    <p>
+      Selected play: 
+      Loading...
+    </p>
+  </div>
+  <div
+    className="tile"
+  >
+    <Feed
+      history={Array []}
+    />
+  </div>
+  <Link
+    className="link"
+    replace={false}
+    to="/"
+  >
+    <div
+      className="main-button tile"
+    >
+      Home
+    </div>
+  </Link>
+</div>
+`;

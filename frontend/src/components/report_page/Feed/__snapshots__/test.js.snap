@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed should render correctly with empty history 1`] = `
+<div
+  className="feed"
+/>
+`;
+
+exports[`Feed should render history correctly 1`] = `
+<div
+  className="feed"
+>
+  <div
+    className="feed-item left"
+    key="0"
+  >
+    <div
+      className="text"
+    >
+      Left Text
+    </div>
+  </div>
+  <div
+    className="feed-item right"
+    key="1"
+  >
+    <div
+      className="text"
+    >
+      Right Text
+    </div>
+  </div>
+</div>
+`;

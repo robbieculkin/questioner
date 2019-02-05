@@ -49,7 +49,6 @@ class Discussion extends Component {
       })
       .catch(error => {
         if (!this._mounted) return;
-        console.log('ERROR!!!');
         console.log(error);
         this.setState(errorState);
       });
