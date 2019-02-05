@@ -3,9 +3,8 @@ import { shallow } from 'enzyme';
 import Feed from '.';
 
 describe('Feed', () => {
-  it('should render correctly with empty history', () => {
-    const feedProps = { history: [] };
-    const component = shallow(<Feed {...feedProps} />);
+  it('should render correctly with no props', () => {
+    const component = shallow(<Feed />);
     expect(component).toMatchSnapshot();
   });
 
@@ -13,12 +12,12 @@ describe('Feed', () => {
     const feedProps = {
       history: [
         {
-          msgId: 0,
+          msgId: '123uuid',
           fromUser: false,
           text: 'Left Text'
         },
         {
-          msgId: 1,
+          msgId: '223uuid',
           fromUser: true,
           text: 'Right Text'
         }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import uuidv1 from 'uuid';
+import PropTypes from 'prop-types';
 
 import './index.scss';
 
@@ -121,5 +122,13 @@ class Discussion extends Component {
     );
   }
 }
+
+Discussion.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      selectedPlay: PropTypes.string
+    })
+  })
+};
 
 export default Discussion;

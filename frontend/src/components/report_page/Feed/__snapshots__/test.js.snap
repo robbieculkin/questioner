@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Feed should render correctly with empty history 1`] = `
+exports[`Feed should render correctly with no props 1`] = `
 <div
   className="feed"
 />
@@ -12,7 +12,7 @@ exports[`Feed should render history correctly 1`] = `
 >
   <div
     className="feed-item left"
-    key="0"
+    key="123uuid"
   >
     <div
       className="text"
@@ -22,7 +22,7 @@ exports[`Feed should render history correctly 1`] = `
   </div>
   <div
     className="feed-item right"
-    key="1"
+    key="223uuid"
   >
     <div
       className="text"

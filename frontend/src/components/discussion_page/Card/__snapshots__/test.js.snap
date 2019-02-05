@@ -9,9 +9,7 @@ exports[`Card should render correctly without props 1`] = `
   >
     <div
       className="question"
-    >
-      Text Here
-    </div>
+    />
     <div
       className="response"
     >

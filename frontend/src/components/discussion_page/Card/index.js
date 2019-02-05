@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 
 import Entry from '../Entry';
@@ -14,5 +15,18 @@ const Card = ({ history, onTextEntry }) =>
       </div>
     </div>
   </div>
+
+Card.propTypes = {
+  history: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string
+    })
+  ),
+  onTextEntry: PropTypes.func
+};
+
+Card.defaultProps = {
+  history: [{ text: '' }]
+}
 
 export default Card;

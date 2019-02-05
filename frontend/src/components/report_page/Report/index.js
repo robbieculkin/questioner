@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import './index.scss';
 
@@ -69,5 +70,13 @@ class Report extends Component {
     );
   }
 }
+
+Report.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      sessionId: PropTypes.string
+    })
+  })
+};
 
 export default Report;
