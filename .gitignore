@@ -17,7 +17,8 @@ instance/
 *.code-workspace
 .vscode/
 
-# Large corpus
+# Large corpus and models
+models/
 *.bz2
 
 # misc
