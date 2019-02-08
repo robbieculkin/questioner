@@ -1,21 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import Home from '.';
 
-describe('Projects', () => {
+jest.mock('uuid', () => jest.fn(() => '123uuid'));
 
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Home />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
-  test('has a valid snapshot', () => {
-    const component = renderer.create(
-      <Home />
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+describe('Home', () => {
+  it('should render correctly without props', () => {
+    const component = shallow(<Home />);
+    expect(component).toMatchSnapshot();
   });
 });

@@ -1,7 +1,17 @@
 {
   "name": "questioner",
+  "description": "A Questioning Agent for Literary Discussion",
   "version": "0.1.0",
+  "contributors": [
+    "Tim Shur <tim.shur@gmail.com>",
+    "Robbie Culkin <robbieculkin@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robbieculkin/questioner.git"
+  },
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "node-sass": "^4.10.0",

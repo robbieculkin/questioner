@@ -34,7 +34,7 @@ Next, we need to spin up a Flask instance. Create a virtualenv at
 ```bash
 cd backend
 pip3 install virtualenv
-virtualenv env
+python3 -m virtualenv env
 source env/bin/activate
 pip3 install -r requirements.txt
 deactivate

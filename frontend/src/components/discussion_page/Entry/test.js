@@ -1,21 +1,36 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
+import { shallow, mount } from 'enzyme';
 import Entry from '.';
 
-describe('Projects', () => {
-
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Entry />, div);
-    ReactDOM.unmountComponentAtNode(div);
+describe('Entry', () => {
+  it('should render correctly with no props', () => {
+    const component = shallow(<Entry />);
+    expect(component).toMatchSnapshot();
   });
 
-  test('has a valid snapshot', () => {
-    const component = renderer.create(
-      <Entry />
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+  it('should call props fn on button click', () => {
+    const onTextEntryFn = jest.fn();
+    const component = shallow(<Entry onTextEntry={onTextEntryFn} />);
+
+    component.setState({ value: 'test' });
+    component
+      .find('button')
+      .simulate('click');
+
+    expect(onTextEntryFn).toHaveBeenCalled();
+  });
+
+  it('should call props fn on pressing <ENTER>', () => {
+    const onTextEntryFn = jest.fn();
+    const component = mount(<Entry onTextEntry={onTextEntryFn} />);
+
+    component.setState({ value: 'test' });
+    component
+      .find('textarea')
+      .simulate('keypress', { key: 'Enter' });
+
+    expect(component).toMatchSnapshot();
+    expect(onTextEntryFn).toHaveBeenCalled();
+    component.unmount();
   });
 });

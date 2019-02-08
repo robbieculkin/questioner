@@ -1,11 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NotFound from '.';
+import Card from '.';
 
-describe('NotFound', () => {
+describe('Card', () => {
   it('should render correctly without props', () => {
-    const component = shallow(<NotFound />);
+    const component = shallow(<Card />);
     expect(component).toMatchSnapshot();
   });
 });
-

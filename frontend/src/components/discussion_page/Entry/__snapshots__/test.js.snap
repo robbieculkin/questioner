@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Entry should call props fn on pressing <ENTER> 1`] = `
+<Entry
+  onTextEntry={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          "test",
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <div
+    className="entry"
+  >
+    <textarea
+      autoFocus={true}
+      id="entryField"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      onClick={[Function]}
+    >
+      Next
+    </button>
+  </div>
+</Entry>
+`;
+
+exports[`Entry should render correctly with no props 1`] = `
+<div
+  className="entry"
+>
+  <textarea
+    autoFocus={true}
+    id="entryField"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    type="text"
+    value=""
+  />
+  <button
+    onClick={[Function]}
+  >
+    Next
+  </button>
+</div>
+`;

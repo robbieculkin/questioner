@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 
 class Entry extends Component {
@@ -30,6 +31,8 @@ class Entry extends Component {
 
   handleTextEntry(value) {
     const { onTextEntry } = this.props;
+    if (value === '')
+      return;
 
     onTextEntry(value);
     this.setState({ value: '' });
@@ -53,5 +56,9 @@ class Entry extends Component {
     );
   }
 }
+
+Entry.propTypes = {
+  onTextEntry: PropTypes.func
+};
 
 export default Entry;

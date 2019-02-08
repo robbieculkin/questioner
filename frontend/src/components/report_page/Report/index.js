@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import './index.scss';
 
 import Feed from '../Feed';
 
-import { errorState, emptyState } from '../../../data/error-data';
+import { errorState, emptyState } from '../../../data/errorData';
 import { REPORT_URI } from '../../../config/api';
 
 class Report extends Component {
@@ -26,12 +27,13 @@ class Report extends Component {
 
     axios.get(REPORT_URI, { params: { sessionId } })
       .then(res => {
-        if (!this._mounted) return;
-        if ('discussion' in res.data) {
-          this.setState({
-            selectedPlay: res.data.selectedPlay,
-            history: res.data.discussion
-          });
+        if (!this._mounted)
+          return;
+
+        const { selectedPlay, discussion } = res.data;
+        this.setState({ selectedPlay });
+        if (discussion !== undefined && res.data.discussion.length > 0) {
+          this.setState({  history: res.data.discussion });
         } else {
           this.setState(emptyState);
         }
@@ -69,5 +71,13 @@ class Report extends Component {
     );
   }
 }
+
+Report.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      sessionId: PropTypes.string
+    })
+  })
+};
 
 export default Report;

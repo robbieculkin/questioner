@@ -7,6 +7,7 @@ from . import routes
 
 @routes.route('/report')
 def report():
+    """GET route to get the report of a discussion session."""
     db = flaskr.mongo.db
     session_id = request.args.get('sessionId')
 

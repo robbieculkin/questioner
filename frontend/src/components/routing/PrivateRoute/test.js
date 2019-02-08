@@ -1,11 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NotFound from '.';
+import PrivateRoute from '.';
 
-describe('NotFound', () => {
+describe('PrivateRoute', () => {
   it('should render correctly without props', () => {
-    const component = shallow(<NotFound />);
+    const component = shallow(<PrivateRoute />);
     expect(component).toMatchSnapshot();
   });
 });
-

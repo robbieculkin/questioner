@@ -12,6 +12,6 @@ app.config.from_mapping(
     MONGO_URI='mongodb://localhost:27017/dev_discussions',
 )
 
-mongo = PyMongo(app)
+mongo = PyMongo(app)  # Create MongoDB connection
 app.db = mongo.db
-app.register_blueprint(routes, url_prefix='/api/v0/')
+app.register_blueprint(routes, url_prefix='/api/v0/')  # register routes

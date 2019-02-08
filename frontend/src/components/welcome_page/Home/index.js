@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import uuidv1 from 'uuid';
 
 import './index.scss';
 
 import { plays } from '../../../data/plays';
+import { post_config } from '../../../config/headers';
+import { RESPONSE_URI } from '../../../config/api';
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      sessionId: uuidv1(),
       selectedPlay: plays[0]
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   handleChange(e) {
@@ -22,8 +28,21 @@ class Home extends Component {
     })
   }
 
+  onClick() {
+    const { sessionId, selectedPlay } = this.state;
+    const updatePayload = {
+      session: {
+        sessionId,
+        selectedPlay,
+        discussion: []
+      }
+    }
+
+    axios.post(RESPONSE_URI, updatePayload, post_config);
+  }
+
   render() {
-    const { selectedPlay } = this.state;
+    const { sessionId, selectedPlay } = this.state;
 
     return (
       <div className={`container centered home`}>
@@ -54,7 +73,8 @@ class Home extends Component {
             Press the button below to start a discussion!
           </p>
         </div>
-        <Link to={{ pathname: '/discussion', state: { selectedPlay } }}
+        <Link to={{ pathname: '/discussion', state: { sessionId, selectedPlay } }}
+              onClick={this.onClick}
               className='link'>
           <div className='main-button tile'>Start a Discussion</div>
         </Link>

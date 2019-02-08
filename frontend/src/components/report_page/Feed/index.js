@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 
 const Feed = ({ history }) =>
@@ -11,5 +12,19 @@ const Feed = ({ history }) =>
       </div>
     )}
   </div>
+
+Feed.propTypes = {
+  history: PropTypes.arrayOf(
+    PropTypes.shape({
+      msgId: PropTypes.string,
+      fromUser: PropTypes.bool,
+      text: PropTypes.string
+    })
+  )
+};
+
+Feed.defaultProps = {
+  history: []
+};
 
 export default Feed;

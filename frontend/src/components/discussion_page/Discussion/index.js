@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import uuidv1 from 'uuid';
+import PropTypes from 'prop-types';
 
 import './index.scss';
 
 import Card from '../Card';
 
 import { post_config } from '../../../config/headers';
-import { errorState } from '../../../data/error-data';
+import { errorState } from '../../../data/errorData';
 import { RESPONSE_URI, QUESTIONS_URI } from '../../../config/api';
 
 class Discussion extends Component {
@@ -16,7 +17,7 @@ class Discussion extends Component {
     super(props);
 
     this.state = {
-      sessionId: uuidv1(),
+      sessionId: props.location.state.sessionId,
       selectedPlay: props.location.state.selectedPlay,
       history: [
         {
@@ -49,7 +50,6 @@ class Discussion extends Component {
       })
       .catch(error => {
         if (!this._mounted) return;
-        console.log('ERROR!!!');
         console.log(error);
         this.setState(errorState);
       });
@@ -122,5 +122,14 @@ class Discussion extends Component {
     );
   }
 }
+
+Discussion.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      sessionId: PropTypes.string,
+      selectedPlay: PropTypes.string
+    })
+  })
+};
 
 export default Discussion;

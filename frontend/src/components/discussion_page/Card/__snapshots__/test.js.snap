@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render correctly without props 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card-item"
+  >
+    <div
+      className="question"
+    />
+    <div
+      className="response"
+    >
+      <Entry />
+    </div>
+  </div>
+</div>
+`;
