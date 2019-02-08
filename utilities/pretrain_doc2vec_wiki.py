@@ -3,13 +3,13 @@ from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from gensim.corpora.wikicorpus import WikiCorpus
 
 def fprint(msg):
-    with open('log.txt', 'w+') as fp:
+    with open('log/log.txt', 'w+') as fp:
         fp.write(str(msg) + '\n')
 
 fprint('START SCRIPT')
-cores = multiprocessing.cpu_count() - 2
+cores = multiprocessing.cpu_count() - 1
 fprint(f'USING CORES: {cores}')
-wikipedia = WikiCorpus('../backend/data/enwiki-latest-pages-articles.xml.bz2')
+wikipedia = WikiCorpus('/local/weka/enwiki-latest-pages-articles.xml.bz2')
 fprint('CORPUS FORMED')
 
 #build iterator
@@ -37,7 +37,7 @@ fprint(str(models[0]))
 models[1].reset_from(models[0])
 fprint(str(models[1]))
 
-for i, model in enumerate(models):
+for i, model in enumerate(models[1:]):
     fprint(f'TRAINING MODEL #{i}')
     model.train(documents, total_examples=model.corpus_count, epochs=model.iter)
     fprint(f'SAVING MODEL #{i}')
