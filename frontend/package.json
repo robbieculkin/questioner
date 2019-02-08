@@ -12,6 +12,7 @@
   },
   "private": true,
   "license": "MIT",
+  "homepage": "http://students.engr.scu.edu/~tshur/",
   "dependencies": {
     "axios": "^0.18.0",
     "node-sass": "^4.10.0",
@@ -27,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build-and-deploy": "npm run build && echo '🚀  Built!'"
+    "build-and-deploy": "npm run build && ./bin/push_to_prod.sh && echo '🚀  Built!'"
   },
   "devDependencies": {
     "enzyme": "^3.4.1",
