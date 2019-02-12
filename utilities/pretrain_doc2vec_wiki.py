@@ -41,4 +41,4 @@ for i, model in enumerate(models[1:]):
     fprint(f'TRAINING MODEL #{i}')
     model.train(documents, total_examples=model.corpus_count, epochs=model.iter)
     fprint(f'SAVING MODEL #{i}')
-    model.save(str(model))
+    model.save(f'model_{i}')
