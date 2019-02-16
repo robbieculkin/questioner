@@ -2,16 +2,23 @@ __pycache__
 transcripts/
 
 # dependencies
-/frontend/node_modules
+node_modules
 
 # flask
 instance/
 
+# logs
+log/
+
 # testing
-/frontend/coverage
+coverage
 
 # production
-/frontend/build
+build
+
+# custom mongodb install
+mongodb/
+data/db/
 
 # VS Code
 *.code-workspace
