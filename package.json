@@ -12,7 +12,7 @@
   },
   "private": true,
   "license": "MIT",
-  "homepage": "http://students.engr.scu.edu/~tshur/",
+  "homepage": "http://students.engr.scu.edu/~tshur/questioner/",
   "dependencies": {
     "axios": "^0.18.0",
     "node-sass": "^4.10.0",
@@ -20,7 +20,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.3",
+    "react-scripts": "^2.1.5",
     "uuid": "^3.3.2"
   },
   "scripts": {
@@ -28,7 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build-and-deploy": "npm run build && ./bin/push_to_prod.sh && echo '🚀  Built!'"
+    "all": "./bin/run_all.sh",
+    "build-and-deploy": "npm run build && ./bin/push_to_prod.sh && echo -e '\n🚀  Built!'"
   },
   "devDependencies": {
     "enzyme": "^3.4.1",
