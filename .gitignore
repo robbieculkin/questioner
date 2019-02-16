@@ -16,6 +16,10 @@ coverage
 # production
 build
 
+# custom mongodb install
+mongodb/
+data/db/
+
 # VS Code
 *.code-workspace
 .vscode/
