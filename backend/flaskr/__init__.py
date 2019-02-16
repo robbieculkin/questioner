@@ -2,6 +2,8 @@ from flask import Flask
 from flask_cors import CORS
 from flask_pymongo import PyMongo
 
+from src.question_agent.agent import QuestionAgent
+
 from .routes import routes
 
 
@@ -13,5 +15,10 @@ app.config.from_mapping(
 )
 
 mongo = PyMongo(app)  # Create MongoDB connection
-app.db = mongo.db
+print('Initialized MongoDB')
+
+QA = QuestionAgent()
+print('initialized!')
+
 app.register_blueprint(routes, url_prefix='/api/v0/')  # register routes
+print('Initialized Flask App!')
