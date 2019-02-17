@@ -22,3 +22,6 @@ print('initialized!')
 
 app.register_blueprint(routes, url_prefix='/api/v0/')  # register routes
 print('Initialized Flask App!')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
