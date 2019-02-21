@@ -15,7 +15,7 @@ import NotFound from './components/error_page/NotFound';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <div>
       <Switch>
         <Route exact path='/' component={Home} />
