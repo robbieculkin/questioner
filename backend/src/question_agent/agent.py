@@ -17,10 +17,10 @@ def get_question(discussion):
 
 class QuestionAgent:
     def __init__(self):
-        print('Initializing QuestionAgent... ', end='')
-        self.pre_trained_DBOW = Doc2Vec.load('data/models/dbow/d2v_dbow')
+        print('Initializing QuestionAgent... ')
+        self.pre_trained_DBOW = Doc2Vec.load('backend/data/models/dbow/d2v_dbow')
         relevant = ['play', 'player', 'original', 'modern']
-        self.translation = pd.read_csv('data/translation.csv')[relevant].dropna()
+        self.translation = pd.read_csv('backend/data/translation.csv')[relevant].dropna()
 
         self.translation['modern_token'] = self.translation.modern.apply(tokenize)
         self.translation['modern_embed'] = self.translation.modern_token.apply(self.pre_trained_DBOW.infer_vector)
