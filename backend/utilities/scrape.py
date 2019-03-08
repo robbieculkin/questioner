@@ -33,25 +33,28 @@ user_agent_list = [
     'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)'
 ]
 
-plays = ['antony-and-cleopatra', 'errors', 'coriolanus','henry4pt1', 'henry4pt2','henryv',
-         'juliuscaesar','asyoulikeit','lear','macbeth','measure-for-measure','merchant','msnd',
-         'muchado','othello','richardii','richardiii', 'romeojuliet','shrew','twelfthnight',
-         'twogentlemen','winterstale']
+plays = ['antony-and-cleopatra', 'asyoulikeit', 'errors', 'coriolanus', 'hamlet', 'henry4pt1', 'henry4pt2','henryv',
+         'juliuscaesar', 'lear', 'macbeth', 'measure-for-measure', 'merchant', 'msnd',
+         'muchado', 'othello', 'richardii', 'richardiii', 'romeojuliet', 'shrew', 'tempest', 'twelfthnight',
+         'twogentlemen', 'winterstale']
 
+#not included in nfs:   All's Well That Ends Well, Cymbeline, Henry VI1-3, Henry VIII,
+#                       Love's Labours Lost, Merchant of Venice, Merry Wives of Windsor,
+#                       Pericles, Timon of Athens, Titus Andronicus, Troilus & Cressida
 for play in plays:
     try:
-        for ii in range(0,500,2):  
+        for ii in range(0, 500, 2):
             if not os.path.isfile(play+str(ii)) :
-                
+
                 url = 'https://www.sparknotes.com/nofear/shakespeare/'+play+'/page_'+str(ii)
 
                 if ii == 0:
                     url = 'https://www.sparknotes.com/nofear/shakespeare/'+play+'/'
                 if ii == 2: #no pg 2 exists
-                    continue 
+                    continue
 
                 if play == 'henry4pt1' and ii != 0: #2nd page is pg 5, stays odd
-                    url = 'https://www.sparknotes.com/nofear/shakespeare/'+play+'/page_'+str(ii+1) 
+                    url = 'https://www.sparknotes.com/nofear/shakespeare/'+play+'/page_'+str(ii+1)
                 if play == 'henry4pt2' and ii != 0: #2nd pages is pg 271, stays odd
                     url = 'https://www.sparknotes.com/nofear/shakespeare/'+play+'/page_'+str(ii+267)
 
@@ -61,7 +64,7 @@ for play in plays:
                 print(user_agent)
                 request = urllib.request.Request(url,headers={'User-Agent': user_agent})
                 page = urllib.request.urlopen(request)
-                
+
                 soup = BeautifulSoup(page, 'html.parser')
 
 
