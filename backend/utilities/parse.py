@@ -5,17 +5,21 @@ import pandas as pd
 import re
 
 final = pd.DataFrame()
-plays = ['antony-and-cleopatra', 'errors', 'coriolanus','henry4pt1', 'henry4pt2','henryv',
-         'juliuscaesar','asyoulikeit','lear','macbeth','measure-for-measure','merchant','msnd',
-         'muchado','othello','richardii','richardiii', 'romeojuliet','shrew','twelfthnight',
-         'twogentlemen','winterstale']
+plays = ['antony-and-cleopatra', 'asyoulikeit', 'errors', 'coriolanus', 'hamlet', 'henry4pt1', 'henry4pt2','henryv',
+         'juliuscaesar', 'lear', 'macbeth', 'measure-for-measure', 'merchant', 'msnd',
+         'muchado', 'othello', 'richardii', 'richardiii', 'romeojuliet', 'shrew', 'tempest', 'twelfthnight',
+         'twogentlemen', 'winterstale']
+
+#not included in nfs:   All's Well That Ends Well, Cymbeline, Henry VI1-3, Henry VIII,
+#                       Love's Labours Lost, Merchant of Venice, Merry Wives of Windsor,
+#                       Pericles, Timon of Athens, Titus Andronicus, Troilus & Cressida
 
 for play in plays:
     print(play)
     play_lines = pd.DataFrame()
-    for ii in range(0,500,2):  
+    for ii in range(0,500,2):
         if os.path.isfile(play+str(ii)) :
-            
+
             fname = play+str(ii)
             file = open(fname)
             soup = BeautifulSoup(file.read(), 'html.parser')
@@ -37,12 +41,12 @@ for play in plays:
                         originals = [orig.text for orig in originals if orig]
 
                         original = ' '.join(originals)
-                        
+
                         lines_o = lines_o.append(pd.DataFrame({'player':player, translation: original}, index=[0]), ignore_index=True)
                     else:
                         player = q.find('b').text if q.find('b') else None
                         modern = q.find('div', attrs={'class':translation+'-line'}).text if q.find('div', attrs={'class':translation+'-line'}) else None
-                        
+
                         lines_m = lines_m.append(pd.DataFrame({'player':player, translation: modern}, index=[0]), ignore_index=True)
 
             lines = lines.append(pd.DataFrame({'player':lines_o['player'], 'original':lines_o['original'], 'modern':lines_m['modern']}), ignore_index=True)
