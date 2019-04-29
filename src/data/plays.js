@@ -28,7 +28,6 @@ const plays = [
   "Richard II",
   "Richard III",
   "Romeo and Juliet",
-  "Shakespeare's Sonnets",
   "The Taming of the Shrew",
   "The Tempest",
   "Timon of Athens",
