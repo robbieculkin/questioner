@@ -15,7 +15,7 @@ class Home extends Component {
 
     this.state = {
       sessionId: uuidv1(),
-      selectedPlay: plays[0]
+      selectedPlay: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -61,7 +61,9 @@ class Home extends Component {
           <div className='select-container'>
             <select className='select'
                     value={selectedPlay}
-                    onChange={this.handleChange}>
+                    onChange={this.handleChange}
+                    required>
+              <option className='option' value='' disabled selected hidden>Select a Play</option>
               {plays.map((play, index) =>
                 <option className='option' value={play} key={index}>
                   {play}
@@ -73,11 +75,15 @@ class Home extends Component {
             Press the button below to start a discussion!
           </p>
         </div>
-        <Link to={{ pathname: '/discussion', state: { sessionId, selectedPlay } }}
-              onClick={this.onClick}
-              className='link'>
-          <div>Start a Discussion</div>
-        </Link>
+        {selectedPlay === ''
+        ? (<div className='disabled-link'>Start a Discussion</div>)
+        : (<Link to={{ pathname: '/discussion', state: { sessionId, selectedPlay } }}
+                 onClick={this.onClick}
+                 className='link'>
+             <div>Start a Discussion</div>
+           </Link>)
+        }
+
       </div>
     );
   }
