@@ -30,4 +30,27 @@
     display: flex;
     justify-content: center;
   }
+
+  .link {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    &.hidden {
+      visibility: hidden;
+      pointer-events: none;
+      cursor: default;
+      div {
+        opacity: 0;
+      }
+    }
+    &.active {
+      visibility: visible;
+      pointer-events: all;
+      cursor: pointer;
+      div {
+        opacity: 1;
+        transition: opacity 0.5s ease-in;
+      }
+    }
+  }
 }

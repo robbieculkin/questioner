@@ -28,16 +28,20 @@ class Home extends Component {
     })
   }
 
-  onClick() {
+  onClick(e) {
     const { sessionId, selectedPlay } = this.state;
+    if (selectedPlay === '') {
+      e.preventDefault();
+      return;
+    }
+
     const updatePayload = {
       session: {
         sessionId,
         selectedPlay,
         discussion: []
       }
-    }
-
+    };
     axios.post(RESPONSE_URI, updatePayload, post_config);
   }
 
@@ -72,15 +76,11 @@ class Home extends Component {
             </select>
           </div>
         </div>
-        {selectedPlay === ''
-        ? (<div className='disabled-link'>Choose a Play Above</div>)
-        : (<Link to={{ pathname: '/discussion', state: { sessionId, selectedPlay } }}
-                 onClick={this.onClick}
-                 className='link'>
-             <div>Start a Discussion</div>
-           </Link>)
-        }
-
+        <Link to={{ pathname: '/discussion', state: { sessionId, selectedPlay } }}
+              onClick={this.onClick}
+              className={'link ' + (selectedPlay === '' ? 'hidden' : 'active')}>
+          <div>Start a Discussion</div>
+        </Link>
       </div>
     );
   }
