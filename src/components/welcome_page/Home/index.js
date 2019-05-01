@@ -73,7 +73,7 @@ class Home extends Component {
           </div>
         </div>
         {selectedPlay === ''
-        ? (<div className='disabled-link'>Start a Discussion</div>)
+        ? (<div className='disabled-link'>Choose a Play Above</div>)
         : (<Link to={{ pathname: '/discussion', state: { sessionId, selectedPlay } }}
                  onClick={this.onClick}
                  className='link'>
