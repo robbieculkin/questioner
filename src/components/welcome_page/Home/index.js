@@ -51,12 +51,12 @@ class Home extends Component {
         </div>
         <div>
           <p>
-            Welcome to Questioner, a conversational AI to promote
-            literary discussion in a seminar style.
+            A conversational AI to promote
+            literary discussion.
           </p>
           <p>
-            Please select the Shakespeare play that you would like
-            to discuss.
+            What work of Shakespeare would you like
+            to discuss?
           </p>
           <div className='select-container'>
             <select className='select'
@@ -69,9 +69,6 @@ class Home extends Component {
               )}
             </select>
           </div>
-          <p>
-            Press the button below to start a discussion!
-          </p>
         </div>
         <Link to={{ pathname: '/discussion', state: { sessionId, selectedPlay } }}
               onClick={this.onClick}
