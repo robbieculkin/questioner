@@ -31,13 +31,13 @@ def get_question(discussion):
 class QuestionAgent:
     def __init__(self, model_path):
         print('Initializing QuestionAgent... ', end='')
-        self.model = Doc2Vec.load(model_path)
+        # self.model = Doc2Vec.load(model_path)
         relevant = ['play', 'player', 'original', 'modern']
         self.translation = pd.read_csv('backend/data/translation.csv')[relevant].dropna()
 
         self.translation['modern_token'] = self.translation.modern.apply(tokenize)
-        self.translation['modern_embed'] = self.translation.modern_token.apply(
-            self.model.infer_vector)
+        # self.translation['modern_embed'] = self.translation.modern_token.apply(
+        #     self.model.infer_vector)
 
         self.templates = pd.read_csv('backend/data/templates.csv')
         with open('backend/data/lines_spoken.pkl', 'rb') as infile:
@@ -97,7 +97,7 @@ class QuestionAgent:
     def quote(self, session_data):
         last_message = session_data['discussion'][-1]['text']
 
-        user_embed = self.model.infer_vector(tokenize(last_message))
+        # user_embed = self.model.infer_vector(tokenize(last_message))
         similarity = cosine_similarity(
             np.array(self.translation.modern_embed.values.tolist()),
             user_embed.reshape(1, -1))  # sometimes throws errors
