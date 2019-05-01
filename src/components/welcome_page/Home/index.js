@@ -76,7 +76,7 @@ class Home extends Component {
         <Link to={{ pathname: '/discussion', state: { sessionId, selectedPlay } }}
               onClick={this.onClick}
               className='link'>
-          <div className='main-button tile'>Start a Discussion</div>
+          <div>Start a Discussion</div>
         </Link>
       </div>
     );

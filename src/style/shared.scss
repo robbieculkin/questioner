@@ -21,8 +21,13 @@
 }
 
 .link {
+  &:hover {
+    font-style: italic;
+  }
+
+  font-size: 24px;
   text-decoration: none;
-  color: #000;
+  color: rgb(46, 170, 77);
 }
 
 .main-button {
