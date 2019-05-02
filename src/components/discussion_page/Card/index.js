@@ -7,9 +7,13 @@ import Entry from '../Entry';
 const Card = ({ history, onTextEntry }) =>
   <div className='card'>
     <div className='card-item'>
-      <div className='question'>
-        {history[history.length - 1].text}
-      </div>
+      {history.map(message =>
+        <div className={`feed-item ${message.fromUser ? 'right' : 'left'}`} key={message.msgId}>
+          <div className='question'>
+            {message.text}
+          </div>
+        </div>
+      )}
       <div className='response'>
         <Entry onTextEntry={onTextEntry} />
       </div>

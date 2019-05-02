@@ -1,19 +1,23 @@
 .card {
-  padding: 40px;
+  padding: 40px 0;
+  width: 50%;
 
   .card-item {
-    text-align: center;
+    text-align: right;
 
     .question {
       width: 100%;
       font-size: 24px;
       margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
 
     .response {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-end;
     }
   }
 }

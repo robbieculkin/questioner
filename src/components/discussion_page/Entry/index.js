@@ -51,7 +51,6 @@ class Entry extends Component {
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}
         />
-        <button onClick={() => this.handleTextEntry(value)}>Next</button>
       </div>
     );
   }

@@ -61,18 +61,19 @@ class Discussion extends Component {
 
   handleTextEntry(text) {
     const { sessionId, selectedPlay, history } = this.state;
+    const discussion = [
+      ...history,
+      {
+        msgId: uuidv1(),
+        text,
+        fromUser: true
+      }
+    ];
     const updatePayload = {
       session: {
         sessionId,
         selectedPlay,
-        discussion: [
-          ...history,
-          {
-            msgId: uuidv1(),
-            text,
-            fromUser: true
-          }
-        ]
+        discussion
       }
     }
 
@@ -84,6 +85,7 @@ class Discussion extends Component {
           .then(res => {
             this.setState({
               history: [
+                ...discussion,
                 {
                   msgId: uuidv1(),
                   text: res.data.question,
@@ -107,16 +109,14 @@ class Discussion extends Component {
     const { sessionId, history } = this.state;
 
     return (
-      <div className='container centered'>
+      <div className='container right'>
         <div className='title'>
           <h1 className='big-title'>Questioner</h1>
         </div>
-        <div className='tile'>
-          <Card history={history} onTextEntry={this.handleTextEntry} />
-        </div>
+        <Card history={history} onTextEntry={this.handleTextEntry} />
         <Link to={{ pathname: '/report', state: { sessionId } }}
               className='link'>
-          <div className='main-button tile'>End Discussion</div>
+          <div>End Discussion</div>
         </Link>
       </div>
     );
