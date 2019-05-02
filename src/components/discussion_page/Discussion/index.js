@@ -109,7 +109,7 @@ class Discussion extends Component {
     return (
       <div className='container centered'>
         <div className='title'>
-          <h1>Questioner</h1>
+          <h1 className='big-title'>Questioner</h1>
         </div>
         <div className='tile'>
           <Card history={history} onTextEntry={this.handleTextEntry} />

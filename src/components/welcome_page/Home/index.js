@@ -50,7 +50,7 @@ class Home extends Component {
 
     return (
       <div className={`container centered home`}>
-        <div className='title'>
+        <div className='title big-title'>
           <h1>Questioner</h1>
         </div>
         <div>
