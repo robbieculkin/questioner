@@ -100,7 +100,8 @@ class QuestionAgent:
         # user_embed = self.model.infer_vector(tokenize(last_message))
         similarity = cosine_similarity(
             np.array(self.translation.modern_embed.values.tolist()),
-            user_embed.reshape(1, -1))  # sometimes throws errors
+            # user_embed.reshape(1, -1) # sometimes throws errors
+        )
 
         return self.translation.iloc[np.argmax(similarity)]['original']
 
@@ -111,8 +112,13 @@ class QuestionAgent:
             ((self.templates['2'].isnull()) |
             (self.templates['2'].isin(['Character', 'Major Character'])))]
 
+        if character_templates.empty:
+            return 'No further questions.'
+
         template = character_templates.loc[np.random.choice(character_templates.index)]
         characters = self.__choose_character(play, 2)
+
+        self.templates = self.templates.drop(template.name, axis=0)
 
         template['Question'] = re.sub(r'\[1\]', characters[0], template['Question'])
         template['Question'] = re.sub(r'\[2\]', characters[1], template['Question'])
