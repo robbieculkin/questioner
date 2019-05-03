@@ -17,6 +17,7 @@ class Discussion extends Component {
     super(props);
 
     this.state = {
+      scrollY: window.scrollY,
       sessionId: props.location.state.sessionId,
       selectedPlay: props.location.state.selectedPlay,
       history: [
@@ -29,6 +30,7 @@ class Discussion extends Component {
     };
 
     this.handleTextEntry = this.handleTextEntry.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
@@ -53,10 +55,20 @@ class Discussion extends Component {
         console.log(error);
         this.setState(errorState);
       });
+
+    // Add event on scroll
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
     this._mounted = false;
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    const scrollY = window.scrollY;
+
+    this.setState({ scrollY });
   }
 
   handleTextEntry(text) {
@@ -103,15 +115,26 @@ class Discussion extends Component {
         console.log(error);
         this.setState(errorState);
       });
+
+    // Scroll to bottom of the page (?)
+    const scroller = () => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      })
+    };
+
+    setTimeout(scroller, 50);
   }
 
   render() {
-    const { sessionId, history } = this.state;
+    const { sessionId, history, scrollY } = this.state;
 
     return (
-      <div className='container right'>
+      <div className='discussion container right-container'>
         <div className='title'>
           <h1 className='big-title'>Questioner</h1>
+          <h1 className={`big-title fixed-title ${scrollY < 200 ? 'hidden-fade' : 'visible-fade'} `}>Questioner</h1>
         </div>
         <Card history={history} onTextEntry={this.handleTextEntry} />
         <Link to={{ pathname: '/report', state: { sessionId } }}

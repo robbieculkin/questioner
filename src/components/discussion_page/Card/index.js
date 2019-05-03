@@ -9,12 +9,12 @@ const Card = ({ history, onTextEntry }) =>
     <div className='card-item'>
       {history.map(message =>
         <div className={`feed-item ${message.fromUser ? 'right' : 'left'}`} key={message.msgId}>
-          <div className='question'>
+          <div className={`${message.fromUser ? 'response' : 'question'} ${message.msgId === history[history.length - 1].msgId ? '' : 'old-message'}`}>
             {message.text}
           </div>
         </div>
       )}
-      <div className='response'>
+      <div className='response entry'>
         <Entry onTextEntry={onTextEntry} />
       </div>
     </div>
