@@ -124,7 +124,7 @@ class Discussion extends Component {
       })
     };
 
-    setTimeout(scroller, 50);
+    setTimeout(scroller, 75);
   }
 
   render() {

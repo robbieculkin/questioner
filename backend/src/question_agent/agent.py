@@ -48,6 +48,7 @@ class QuestionAgent:
         # self.translation['modern_embed'] = self.translation.modern_token.apply(
         #     self.model.infer_vector)
 
+        self.quotes = pd.read_csv('backend/data/quotes.csv').drop('Unnamed: 0', axis=1)
         self.templates = pd.read_csv('backend/data/templates.csv')
         with open('backend/data/lines_spoken.pkl', 'rb') as infile:
             self.lines_spoken = pickle.load(infile)
@@ -114,17 +115,26 @@ class QuestionAgent:
 
         return anchor_char.title(), support_char.title()
 
-    @check_none('Hello user!')
+    @check_none('Hello (quote)!')
     def quote(self, session_data):
-        last_message = session_data['discussion'][-1]['text']
+        # last_message = session_data['discussion'][-1]['text']
+        # # user_embed = self.model.infer_vector(tokenize(last_message))
+        # similarity = cosine_similarity(
+        #     np.array(self.translation.modern_embed.values.tolist()),
+        #     # user_embed.reshape(1, -1) # sometimes throws errors
+        # )
+        # return self.translation.iloc[np.argmax(similarity)]['original']
+        play = session_data['selectedPlay']
+        play_quotes = self.quotes[self.quotes['Play'] == play]
+        selected_quote = play_quotes.loc[np.random.choice(play_quotes.index)]
 
-        # user_embed = self.model.infer_vector(tokenize(last_message))
-        similarity = cosine_similarity(
-            np.array(self.translation.modern_embed.values.tolist()),
-            # user_embed.reshape(1, -1) # sometimes throws errors
-        )
+        actual_quote = selected_quote['Quote']
+        act, scene = re.match(r'([IVX]+)\.([IVX]+)', selected_quote['ActScene']).groups()
+        act_scene = f'(Act {act}, Scene {scene})'
 
-        return self.translation.iloc[np.argmax(similarity)]['original']
+        formatted_quote = f'"{actual_quote}" {act_scene}'
+        response = f'What do you think about this quote? {formatted_quote}'
+        return response
 
     @check_none('Hello')
     def character_template(self, session_data):

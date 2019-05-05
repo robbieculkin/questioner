@@ -14,6 +14,6 @@ def questions():
     session_id = request.args.get('sessionId')
     disc = db.discussions.find_one({'sessionId': session_id})
     data = {
-        'question': QA.character_template(disc)
+        'question': QA.quote(disc)
     }
     return dumps(data)

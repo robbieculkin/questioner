@@ -26,14 +26,14 @@
 24,As You Like It,II.VII,True is it that we have seen better days,10700025.0
 25,As You Like It,IV.I,For ever and a day,258000237.0
 26,As You Like It,V.I,"The fool doth think he is wise, but the wise man knows himself to be a fool",17700031.0
-27,King Richard III,I.I,Now is the winter of our discontent,9510027.0
-28,King Richard III,V.IV,A horse! a horse! my kingdom for a horse!,15400037.0
-29,King Richard III,V.III,"Conscience is but a word that cowards use, devised at first to keep the strong in awe",766037.0
-30,King Richard III,III.I,"So wise so young, they say, do never live long",880024.0
-31,King Richard III,III.IV,Off with his head!,18300035.0
-32,King Richard III,IV.IV,"An honest tale speeds best, being plainly told",1390027.0
-33,King Richard III,V.III,The king's name is a tower of strength,2230033.0
-34,King Richard III,I.III,"The world is grown so bad, that wrens make prey where eagles dare not perch",667027.0
+27,Richard III,I.I,Now is the winter of our discontent,9510027.0
+28,Richard III,V.IV,A horse! a horse! my kingdom for a horse!,15400037.0
+29,Richard III,V.III,"Conscience is but a word that cowards use, devised at first to keep the strong in awe",766037.0
+30,Richard III,III.I,"So wise so young, they say, do never live long",880024.0
+31,Richard III,III.IV,Off with his head!,18300035.0
+32,Richard III,IV.IV,"An honest tale speeds best, being plainly told",1390027.0
+33,Richard III,V.III,The king's name is a tower of strength,2230033.0
+34,Richard III,I.III,"The world is grown so bad, that wrens make prey where eagles dare not perch",667027.0
 35,Romeo and Juliet,II.II,"O Romeo, Romeo! wherefore art thou Romeo?",70900034.0
 36,Romeo and Juliet,II.II,"It is the east, and Juliet is the sun",70800045.0
 37,Romeo and Juliet,II.II,"Good Night, Good night! Parting is such sweet sorrow, that I shall say good night till it be morrow.",16000039.0
@@ -55,21 +55,21 @@
 53,Measure for Measure,I.IV,"Our doubts are traitors, and make us lose the good we oft might win, by fearing to attempt",12200038.0
 54,Measure for Measure,II.I,"Some rise by sin, and some by virtue fall",7850033.0
 55,Measure for Measure,III.I,The miserable have no other medicine but only hope,7660034.0
-56,"King Henry IV, Part I",I.II,He will give the devil his due,829042.0
-57,"King Henry IV, Part I",V.IV,The better part of valour is discretion,1070030.0
-58,"King Henry IV, Part II",II.I,He hath eaten me out of house and home,567034.0
-59,"King Henry IV, Part II",III.I,Uneasy lies the head that wears a crown,4350087.0
-60,"King Henry IV, Part II",III.II,A man can die but once,634036.0
-61,"King Henry IV, Part II",II.II,"I do now remember the poor creature, small beer",282027.0
-62,"King Henry IV, Part II",III.II,We have heard the chimes at midnight,482032.0
-63,"King Henry IV, Part III",II.II,"The smallest worm will turn, being trodden on",178026.0
-64,"King Henry IV, Part III",V.VI,Suspicion always haunts the guilty mind; The thief doth fear each bush an officer,150028.0
-65,"King Henry the Sixth, Part I",III.II,Delays have dangerous ends,131027.0
-66,"King Henry the Sixth, Part I",V.II,"Of all base passions, fear is the most accursed",125030.0
-67,"King Henry the Sixth, Part II",IV.II,"The first thing we do, let's kill all the lawyers",210030.0
-68,"King Henry the Sixth, Part II",IV.I,Small things make base men proud,125030.0
-69,"King Henry the Sixth, Part II",IV.I,True nobility is exempt from fear,254029.0
-70,"King Henry the Sixth, Part III",III.III,"Having nothing, nothing can he lose",135025.0
+56,"Henry IV, Part 1",I.II,He will give the devil his due,829042.0
+57,"Henry IV, Part 1",V.IV,The better part of valour is discretion,1070030.0
+58,Henry IV Part 2,II.I,He hath eaten me out of house and home,567034.0
+59,Henry IV Part 2,III.I,Uneasy lies the head that wears a crown,4350087.0
+60,Henry IV Part 2,III.II,A man can die but once,634036.0
+61,Henry IV Part 2,II.II,"I do now remember the poor creature, small beer",282027.0
+62,Henry IV Part 2,III.II,We have heard the chimes at midnight,482032.0
+63,"Henry IV, Part III",II.II,"The smallest worm will turn, being trodden on",178026.0
+64,"Henry IV, Part III",V.VI,Suspicion always haunts the guilty mind; The thief doth fear each bush an officer,150028.0
+65,Henry VI Part 1,III.II,Delays have dangerous ends,131027.0
+66,Henry VI Part 1,V.II,"Of all base passions, fear is the most accursed",125030.0
+67,Henry VI Part 2,IV.II,"The first thing we do, let's kill all the lawyers",210030.0
+68,Henry VI Part 2,IV.I,Small things make base men proud,125030.0
+69,Henry VI Part 2,IV.I,True nobility is exempt from fear,254029.0
+70,Henry VI Part 3,III.III,"Having nothing, nothing can he lose",135025.0
 71,Timon of Athens,IV.II,We have seen better days,6110083.0
 72,Julius Caesar,III.II,"Friends, Romans, countrymen, lend me your ears; I come to bury Caesar, not to praise him",6720030.0
 73,Julius Caesar,I.II,"But, for my own part, it was Greek to me",6450037.0
@@ -117,15 +117,15 @@
 115,Cymbeline,III.III,I have not slept one wink.,2290033.0
 116,Twelfth Night,II.V,"Be not afraid of greatness: some are born great, some achieve greatness and some have greatness thrust upon them",6960036.0
 117,Twelfth Night,III.I,"Love sought is good, but giv'n unsought is better",583036.0
-118,King Henry the Fifth,III.II,Men of few words are the best men,924036.0
+118,Henry V,III.II,Men of few words are the best men,924036.0
 119,A Midsummer Night's Dream,I.I,The course of true love never did run smooth,42900040.0
 120,A Midsummer Night's Dream,I.I,"Love looks not with the eyes, but with the mind, and therefore is winged Cupid painted blind",17000042.0
 121,Much Ado About Nothing,III.II,Everyone can master a grief but he that has it,1140060.0
 122,Titus Andronicus,I.I,These words are razors to my wounded heart,4580047.0
 123,The Winter's Tale,III.II,What's gone and what's past help should be past grief,217037.0
 124,The Winter's Tale,I.I,You pay a great deal too dear for what's given freely,2760045.0
-125,Taming of the Shrew,III.IV,Out of the jaws of death,12700101.0
-126,Taming of the Shrew,V.I,Thus the whirligig of time brings in his revenges,885034.0
-127,Taming of the Shrew,V.I,For the rain it raineth every day,2310056.0
+125,The Taming of the Shrew,III.IV,Out of the jaws of death,12700101.0
+126,The Taming of the Shrew,V.I,Thus the whirligig of time brings in his revenges,885034.0
+127,The Taming of the Shrew,V.I,For the rain it raineth every day,2310056.0
 128,Troilus and Cressida,II.III,"The common curse of mankind, - folly and ignorance",1780045.0
 129,Coriolanus,II.I,Nature teaches beasts to know their friends,12900049.0
