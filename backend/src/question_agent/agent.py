@@ -1,10 +1,13 @@
 import re
 import pickle
+from bson.json_util import dumps
 from functools import wraps
 import numpy as np
 import pandas as pd
 from gensim.models.doc2vec import Doc2Vec
 from sklearn.metrics.pairwise import cosine_similarity
+
+import flaskr
 
 DBOW_MODEL = 'backend/data/models/dbow/d2v_dbow'
 DM_MODEL = 'backend/data/models/dm/d2v_dm'
@@ -133,6 +136,7 @@ class QuestionAgent:
         characters = self.__choose_character(play)
 
         #self.templates = self.templates.drop(template.name, axis=0)
+        self.remove_template_user(template.name, session_data['sessionId'])
 
         template['Question'] = re.sub(
             r'\[1\]', characters[0], template['Question'])
@@ -151,3 +155,20 @@ class QuestionAgent:
             return 'No further questions.'
         else:
             return self.character_template(session_data)
+
+    def remove_template_user(self, name, session_id):
+        db = flaskr.mongo.db
+
+        db.discussions.update({
+            'sessionId': session_id
+        }, {
+            '$push': {
+                'usedTemplates': dumps(str(name))
+            }
+        })
+
+    def get_used_templates(self, session_id):
+        db = flaskr.mongo.db
+
+        data = db.discussions.find_one({'sessionId': session_id})
+        return data['usedTemplates']

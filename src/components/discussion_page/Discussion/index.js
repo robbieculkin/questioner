@@ -74,7 +74,7 @@ class Discussion extends Component {
   handleTextEntry(text) {
     const { sessionId, selectedPlay, history } = this.state;
     const discussion = [
-      ...history,
+      history[history.length - 1],
       {
         msgId: uuidv1(),
         text,
