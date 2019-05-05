@@ -154,7 +154,7 @@ class QuestionAgent:
                                (self.templates['2'].isin(['Character', 'Major Character'])))]
 
     def response(self, session_data):
-        if self.get_character_templates().empty:
+        if self.get_character_templates(session_data['sessionId']).empty:
             return 'No further questions.'
         else:
             return self.character_template(session_data)
