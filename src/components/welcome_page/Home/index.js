@@ -39,7 +39,8 @@ class Home extends Component {
       session: {
         sessionId,
         selectedPlay,
-        discussion: []
+        discussion: [],
+        usedTemplates: []
       }
     };
     axios.post(RESPONSE_URI, updatePayload, post_config);

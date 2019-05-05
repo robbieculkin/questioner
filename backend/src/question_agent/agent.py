@@ -132,7 +132,7 @@ class QuestionAgent:
             character_templates.index)]
         characters = self.__choose_character(play)
 
-        self.templates = self.templates.drop(template.name, axis=0)
+        #self.templates = self.templates.drop(template.name, axis=0)
 
         template['Question'] = re.sub(
             r'\[1\]', characters[0], template['Question'])
