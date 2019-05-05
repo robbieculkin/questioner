@@ -129,7 +129,9 @@ class QuestionAgent:
     @check_none('Hello')
     def character_template(self, session_data):
         play = self.play_names[session_data['selectedPlay']]
-        character_templates = self.get_character_templates()
+
+        used_templates = self.get_used_templates(session_data['sessionId'])
+        character_templates = self.get_character_templates(used_templates)
 
         template = character_templates.loc[np.random.choice(
             character_templates.index)]
@@ -145,7 +147,8 @@ class QuestionAgent:
 
         return template['Question']
 
-    def get_character_templates(self):
+    def get_character_templates(self, used_templates):
+        # Use used_templates here to return an unused template question
         return self.templates[(self.templates['1'].isin(['Character', 'Major Character'])) &
                               ((self.templates['2'].isnull()) |
                                (self.templates['2'].isin(['Character', 'Major Character'])))]
