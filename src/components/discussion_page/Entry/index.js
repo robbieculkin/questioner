@@ -10,7 +10,6 @@ const getCaretPosition = () => {
   const start = elt.selectionStart;
   const end = elt.selectionEnd;
 
-  console.log(start, end);
   return start === end ? end : -1;
 };
 
@@ -22,11 +21,6 @@ const getCaretStyle = unfocused => {
   if (!unfocused && caretPosition >= 0) {
     const caret = getCaretCoordinates(elt, caretPosition);
     const rect = elt.getBoundingClientRect();
-    // const characterWidth = 16.97;
-    // const lineHeight = 31;
-    // const charactersPerLine = Math.floor((rect.right - rect.left) / characterWidth + 1);
-    // const horizontalOffset = characterWidth * (caretPosition % charactersPerLine);
-    // const verticalOffset = lineHeight * Math.floor(caretPosition / charactersPerLine);
 
     return {
       top: rect.top + caret.top,
@@ -63,6 +57,8 @@ class Entry extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    this.handleBlur();
+    setTimeout(this.handleFocus, 100);
   }
 
   componentWillUnmount() {
