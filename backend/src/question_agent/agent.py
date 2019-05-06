@@ -194,4 +194,4 @@ class QuestionAgent:
         db = flaskr.mongo.db
 
         data = db.discussions.find_one({'sessionId': session_id})
-        return data['usedTemplates']
+        return list(map(int, data['usedTemplates']))
