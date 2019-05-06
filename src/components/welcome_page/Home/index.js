@@ -68,7 +68,7 @@ class Home extends Component {
                     value={selectedPlay}
                     onChange={this.handleChange}
                     required>
-              <option className='option' value='' disabled selected hidden>Select a Play</option>
+              <option className='option' defaultValue value='' disabled hidden>Select a Play</option>
               {plays.map((play, index) =>
                 <option className='option' value={play} key={index}>
                   {play}
