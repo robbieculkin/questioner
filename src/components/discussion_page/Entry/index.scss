@@ -1,11 +1,12 @@
 .entry {
+    height: 100%;
     width: 100%;
 
     textarea {
         /* Fix issues with Grammarly extension! */
         /* Write JS to resize textarea when too many lines */
         display: block;
-        min-height: 50px;
+        height: 100%;
         width: 100%;
         margin-bottom: 10px;
         border: none;
@@ -13,7 +14,9 @@
         overflow: hidden;
         outline: none;
         font-size: 24px;
-        background: #eee;
+        background: transparent;
+        color: transparent;
+        text-shadow: 0px 0px 0px #333;
     }
 
     button {
@@ -23,5 +26,22 @@
         border: 1px solid #aaaaaa;
         border-radius: 0;
         font-size: 20px;
+    }
+
+    .caret {
+        position: fixed;
+        background: rgb(46, 170, 77);
+        width: 3px;
+        height: 32px;
+        // animation: 1s blink step-end infinite;
+    }
+
+    @keyframes blink {
+        from, to {
+            background: transparent;
+        }
+        50% {
+            background: rgb(46, 170, 77);
+        }
     }
 }

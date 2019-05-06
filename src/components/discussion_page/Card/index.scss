@@ -23,9 +23,11 @@
     .response {
       margin-bottom: 80px;
       width: 650px;
+      word-wrap: break-word;
 
       &.entry {
-        margin-bottom: 30%;
+        height: 250px;
+        margin-bottom: 5%;
       }
     }
   }

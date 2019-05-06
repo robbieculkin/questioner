@@ -17,3 +17,7 @@ body {
 button, select, textarea {
   font-family: 'EB Garamond', 'Helvetica', serif;
 }
+
+::selection {
+  background: rgb(46, 170, 77);
+}
