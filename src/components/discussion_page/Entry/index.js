@@ -13,12 +13,15 @@ const getCaretPosition = () => {
   return start === end ? end : -1;
 };
 
-const getCaretStyle = unfocused => {
-  // visibility hidden if argument provided/falsy
-  const caretPosition = getCaretPosition();
+const getCaretStyle = option => {
   const elt = document.getElementById('entryField');
+  const caretPosition = getCaretPosition();
 
-  if (!unfocused && caretPosition >= 0) {
+  let focused = true;
+  if (option === 'unfocused')
+    focused = false;
+
+  if (focused && caretPosition >= 0) {
     const caret = getCaretCoordinates(elt, caretPosition);
     const rect = elt.getBoundingClientRect();
 
