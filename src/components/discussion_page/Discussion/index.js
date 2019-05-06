@@ -74,7 +74,7 @@ class Discussion extends Component {
   handleTextEntry(text) {
     const { sessionId, selectedPlay, history } = this.state;
     const discussion = [
-      history[history.length - 1],
+      ...history,
       {
         msgId: uuidv1(),
         text,
@@ -85,7 +85,7 @@ class Discussion extends Component {
       session: {
         sessionId,
         selectedPlay,
-        discussion
+        discussion: discussion.slice(-2)  // Only send the new part
       }
     }
 

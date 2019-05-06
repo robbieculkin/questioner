@@ -4,13 +4,15 @@ import './index.scss';
 
 import Entry from '../Entry';
 
+const process_html = text => text.split('\\n').map((item, key) => <span key={key}>{item}<br/></span>);
+
 const Card = ({ history, onTextEntry }) =>
   <div className='card'>
     <div className='card-item'>
       {history.map(message =>
         <div className={`feed-item ${message.fromUser ? 'right' : 'left'}`} key={message.msgId}>
           <div className={`${message.fromUser ? 'response' : 'question'} ${message.msgId === history[history.length - 1].msgId ? '' : 'old-message'}`}>
-            {message.text}
+            {process_html(message.text)}
           </div>
         </div>
       )}

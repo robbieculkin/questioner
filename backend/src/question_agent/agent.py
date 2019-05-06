@@ -133,7 +133,7 @@ class QuestionAgent:
         act_scene = f'(Act {act}, Scene {scene})'
 
         formatted_quote = f'"{actual_quote}" {act_scene}'
-        response = f'What do you think about this quote? {formatted_quote}'
+        response = f'What do you think about this quote?\\n\\n{formatted_quote}'
         return response
 
     @check_none('Hello')
