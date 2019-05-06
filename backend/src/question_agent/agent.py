@@ -157,16 +157,27 @@ class QuestionAgent:
 
     def get_character_templates(self, session_id):
         # Use used_templates here to return an unused template question
-        used_templates = self.get_used_templates(session_id)
-        return self.templates[(self.templates['1'].isin(['Character', 'Major Character'])) &
+        char_templates = self.templates[(self.templates['1'].isin(['Character', 'Major Character'])) &
                               ((self.templates['2'].isnull()) |
                                (self.templates['2'].isin(['Character', 'Major Character'])))]
+        used_templates = self.get_used_templates(session_id)
+        available_templates = char_templates.loc[(set(char_templates.index) - set(used_templates))]
+        return available_templates
 
+    @check_none('Hello')
     def response(self, session_data):
-        if self.get_character_templates(session_data['sessionId']).empty:
-            return 'No further questions.'
-        else:
+        option = np.random.choice([1,2])
+
+        if option == 1 and not self.get_character_templates(session_data['sessionId']).empty:
             return self.character_template(session_data)
+        else:
+            return self.quote(session_data)
+
+
+        # if self.get_character_templates(session_data['sessionId']):
+        #     return 'No further questions.'
+        # else:
+        #     return self.character_template(session_data)
 
     def remove_template_user(self, name, session_id):
         db = flaskr.mongo.db
