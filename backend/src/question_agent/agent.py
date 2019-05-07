@@ -164,14 +164,17 @@ class QuestionAgent:
         available_templates = char_templates.loc[(set(char_templates.index) - set(used_templates))]
         return available_templates
 
-    @check_none('Hello')
+    @check_none('Hi! What would you like to talk about today?')
     def response(self, session_data):
-        option = np.random.choice([1,2])
+        option = np.random.choice([1, 2])
+        play = self.play_names[session_data['selectedPlay']]
 
-        if option == 1 and not self.get_character_templates(session_data['sessionId']).empty:
+        if option == 1 and not self.quotes[self.quotes['Play'] == play].empty:
+            return self.quote(session_data)
+        elif not self.get_character_templates(session_data['sessionId']).empty:
             return self.character_template(session_data)
         else:
-            return self.quote(session_data)
+            return 'Thanks for your responses! Click "End Discussion" to see what we\'ve talked about.'
 
 
         # if self.get_character_templates(session_data['sessionId']):
@@ -194,4 +197,5 @@ class QuestionAgent:
         db = flaskr.mongo.db
 
         data = db.discussions.find_one({'sessionId': session_id})
-        return list(map(int, data['usedTemplates']))
+        template_nums = [int(num.replace('"', '')) for num in data['usedTemplates']]
+        return template_nums
