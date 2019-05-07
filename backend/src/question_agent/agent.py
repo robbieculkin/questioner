@@ -182,7 +182,7 @@ class QuestionAgent:
         elif option == 1:
             return self.quote(session_data)
         else:
-            return 'Thanks for your responses! Click "End Discussion" to see what we\'ve talked about.'
+            return self.character_template(session_data)
 
     def remove_template_user(self, name, session_id):
         db = flaskr.mongo.db
