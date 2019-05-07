@@ -117,20 +117,15 @@ class QuestionAgent:
 
     @check_none('Hello (quote)!')
     def quote(self, session_data):
-        # last_message = session_data['discussion'][-1]['text']
-        # # user_embed = self.model.infer_vector(tokenize(last_message))
-        # similarity = cosine_similarity(
-        #     np.array(self.translation.modern_embed.values.tolist()),
-        #     # user_embed.reshape(1, -1) # sometimes throws errors
-        # )
-        # return self.translation.iloc[np.argmax(similarity)]['original']
         play = session_data['selectedPlay']
-        play_quotes = self.quotes[self.quotes['Play'] == play]
-        selected_quote = play_quotes.loc[np.random.choice(play_quotes.index)]
+        available_quotes = self.get_available_quotes(session_data['sessionId'], play)
+        selected_quote = available_quotes.loc[np.random.choice(available_quotes.index)]
 
         actual_quote = selected_quote['Quote']
         act, scene = re.match(r'([IVX]+)\.([IVX]+)', selected_quote['ActScene']).groups()
         act_scene = f'(Act {act}, Scene {scene})'
+
+        self.remove_quote_user(selected_quote.name, session_data['sessionId'])
 
         formatted_quote = f'"{actual_quote}" {act_scene}'
         response = f'What do you think about this quote?\\n\\n{formatted_quote}'
@@ -164,18 +159,30 @@ class QuestionAgent:
         available_templates = char_templates.loc[(set(char_templates.index) - set(used_templates))]
         return available_templates
 
+    def get_available_quotes(self, session_id, play):
+        play_quotes = self.quotes[self.quotes['Play'] == play]
+        used_quotes = self.get_used_quotes(session_id)
+        available_quotes = play_quotes.loc[(set(play_quotes.index) - set(used_quotes))]
+        return available_quotes
+
     @check_none('Hi! What would you like to talk about today?')
     def response(self, session_data):
         option = np.random.choice([1, 2])
-        play = self.play_names[session_data['selectedPlay']]
+        session_id = session_data['sessionId']
+        play = session_data['selectedPlay']
 
-        if option == 1 and not self.quotes[self.quotes['Play'] == play].empty:
-            return self.quote(session_data)
-        elif not self.get_character_templates(session_data['sessionId']).empty:
-            return self.character_template(session_data)
-        else:
+        no_quotes = self.get_available_quotes(session_id, play).empty
+        no_questions = self.get_character_templates(session_id).empty
+        if no_quotes and no_questions:  # none of either
             return 'Thanks for your responses! Click "End Discussion" to see what we\'ve talked about.'
-
+        elif no_quotes:  # if no quotes, give question
+            return self.character_template(session_data)
+        elif no_questions:  # if no questions, give quote
+            return self.quote(session_data)
+        elif option == 1:
+            return self.quote(session_data)
+        else:
+            return self.character_template(session_data)
 
         # if self.get_character_templates(session_data['sessionId']):
         #     return 'No further questions.'
@@ -199,3 +206,21 @@ class QuestionAgent:
         data = db.discussions.find_one({'sessionId': session_id})
         template_nums = [int(num.replace('"', '')) for num in data['usedTemplates']]
         return template_nums
+
+    def remove_quote_user(self, name, session_id):
+        db = flaskr.mongo.db
+
+        db.discussions.update({
+            'sessionId': session_id
+        }, {
+            '$push': {
+                'usedQuotes': dumps(str(name))
+            }
+        })
+
+    def get_used_quotes(self, session_id):
+        db = flaskr.mongo.db
+
+        data = db.discussions.find_one({'sessionId': session_id})
+        quote_nums = [int(num.replace('"', '')) for num in data['usedQuotes']]
+        return quote_nums
