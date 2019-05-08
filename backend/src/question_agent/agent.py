@@ -47,7 +47,7 @@ class QuestionAgent:
             tokenize)
         # self.translation['modern_embed'] = self.translation.modern_token.apply(
         #     self.model.infer_vector)
-
+        self.setting_genre = pd.read_csv('backend/data/setting_genre.csv',index_col='Title')
         self.quotes = pd.read_csv('backend/data/quotes.csv').drop('Unnamed: 0', axis=1)
         self.templates = pd.read_csv('backend/data/templates.csv')
         with open('backend/data/lines_spoken.pkl', 'rb') as infile:
@@ -129,11 +129,12 @@ class QuestionAgent:
 
         formatted_quote = f'"{actual_quote}" {act_scene}'
         # NOTE: \\q splits quote from other text
-        response = f'What do you think about this quote?\\q{formatted_quote}'
+        response = f"What is the significance of the following quote?\\q{formatted_quote}"
         return response
 
     @check_none('Hello')
     def character_template(self, session_data):
+        # DEPRECATED
         play = self.play_names[session_data['selectedPlay']]
         character_templates = self.get_character_templates(session_data['sessionId'])
 
@@ -152,7 +153,7 @@ class QuestionAgent:
         return template['Question']
 
     def get_character_templates(self, session_id):
-        # Use used_templates here to return an unused template question
+        # DEPRECATED
         char_templates = self.templates[(self.templates['1'].isin(['Character', 'Major Character'])) &
                                         ((self.templates['2'].isnull()) |
                                          (self.templates['2'].isin(['Character', 'Major Character'])))]
@@ -173,17 +174,17 @@ class QuestionAgent:
         play = session_data['selectedPlay']
 
         no_quotes = self.get_available_quotes(session_id, play).empty
-        no_questions = self.get_character_templates(session_id).empty
+        no_questions = self.get_available_templates(session_id).empty
         if no_quotes and no_questions:  # none of either
             return 'Thanks for your responses! Click "End Discussion" to see what we\'ve talked about.'
         elif no_quotes:  # if no quotes, give question
-            return self.character_template(session_data)
+            return self.template_question(session_data)
         elif no_questions:  # if no questions, give quote
             return self.quote(session_data)
         elif option == 1:
             return self.quote(session_data)
         else:
-            return self.character_template(session_data)
+            return self.template_question(session_data)
 
     def remove_template_user(self, name, session_id):
         db = flaskr.mongo.db
@@ -220,3 +221,65 @@ class QuestionAgent:
         data = db.discussions.find_one({'sessionId': session_id})
         quote_nums = [int(num.replace('"', '')) for num in data['usedQuotes']]
         return quote_nums
+
+    def template_question(self, session_data):
+        play = session_data['selectedPlay']
+        setting = self.setting_genre.loc[play]['City']
+        genre = self.setting_genre.loc[play]['Genre']
+        #todo more sophisticated themes by play
+        theme = np.random.choice(['ambition',
+                                  'the lust for power',
+                                  'appearance versus reality',
+                                  'temptation',
+                                  'guilt'])
+
+        templates = self.get_available_templates(session_data['sessionId'])
+        template = templates.loc[np.random.choice(templates.index)]
+        characters = self.__choose_character(self.play_names[play])
+
+        self.remove_template_user(template.name, session_data['sessionId'])
+
+        for ii in [1, 2]:
+            if template[str(ii)] in ['Major Character', 'Character']:
+                template['Question'] = re.sub(
+                    r'\['+str(ii)+r'\]',
+                    characters[ii-1],
+                    template['Question'])
+
+            elif template[str(ii)] == 'Play':
+                template['Question'] = re.sub(
+                    r'\['+str(ii)+r'\]',
+                    play,
+                    template['Question'])
+
+            elif template[str(ii)] == 'Setting':
+                template['Question'] = re.sub(
+                    r'\['+str(ii)+r'\]',
+                    setting,
+                    template['Question'])
+
+            elif template[str(ii)] == 'Genre':
+                template['Question'] = re.sub(
+                    r'\['+str(ii)+r'\]',
+                    genre,
+                    template['Question'])
+
+            elif template[str(ii)] == 'Theme':
+                template['Question'] = re.sub(
+                    r'\['+str(ii)+r'\]',
+                    theme,
+                    template['Question'])
+
+            elif template[str(ii)] == 'Character, theme':
+                blank = np.random.choice([theme, characters[ii-1]])
+                template['Question'] = re.sub(
+                    r'\['+str(ii)+r'\]',
+                    blank,
+                    template['Question'])
+
+        return template['Question']
+
+    def get_available_templates(self, session_id):
+        used_templates = self.get_used_templates(session_id)
+        available_templates = self.templates.loc[(set(self.templates.index) - set(used_templates))]
+        return available_templates
