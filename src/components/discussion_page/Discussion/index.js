@@ -172,11 +172,11 @@ class Discussion extends Component {
               <Link to='/' className='link'>
                 <div>Home</div>
               </Link>
+              <div className='link print' onClick={this.handlePrint}>Print</div>
             </div>
           : <div className='link-container'>
               <div onClick={this.handleClick} className='link'>End Discussion</div>
             </div>
-
         }
       </div>
     );
