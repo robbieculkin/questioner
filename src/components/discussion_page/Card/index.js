@@ -9,14 +9,14 @@ const process_html = text => {
     return text;
 
   text = text.split(/\\q|"/)
-  if (text.length == 4) {
+  if (text.length === 4) {
     return (
       <div>
         <span>{text[0]}</span>
         <br/>
         <br/>
         <div className='quote-container'>
-          <span>{text[1]}</span>
+          <span>{text[1].trim().toUpperCase()}</span>
           <br/>
           <span className='quote-text'>
             <span className='accent-symbol'>"</span>

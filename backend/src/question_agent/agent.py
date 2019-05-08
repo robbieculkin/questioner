@@ -115,11 +115,24 @@ class QuestionAgent:
 
         return anchor_char.title(), support_char.title()
 
+    def __choose_quote(self, play, available_quotes):
+        # Build probabilities
+        # return available_quotes.loc[np.random.choice(available_quotes.index)]
+        total_importance = available_quotes.sum()['SearchResultCount']
+        probs = [count / total_importance for count in available_quotes['SearchResultCount']]
+
+        quote_idx = np.random.choice(available_quotes.index,
+                                     size=1,
+                                     p=probs,
+                                     replace=False)
+        selected_quote = available_quotes.loc[int(quote_idx)]
+        return selected_quote
+
     @check_none('Hello (quote)!')
     def quote(self, session_data):
         play = session_data['selectedPlay']
         available_quotes = self.get_available_quotes(session_data['sessionId'], play)
-        selected_quote = available_quotes.loc[np.random.choice(available_quotes.index)]
+        selected_quote = self.__choose_quote(play, available_quotes)
 
         player = selected_quote['player']
         actual_quote = selected_quote['Quote']
