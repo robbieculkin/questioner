@@ -50,7 +50,7 @@ class QuestionAgent:
         self.setting_genre = pd.read_csv('backend/data/setting_genre.csv',index_col='Title')
         self.quotes = pd.read_csv('backend/data/quotes.csv').drop('Unnamed: 0', axis=1)
         self.templates = pd.read_csv('backend/data/templates.csv')
-        with open('backend/data/lines_spoken.pkl', 'rb') as infile:
+        with open('backend/data/lines_spoken_truncated.pkl', 'rb') as infile:
             self.lines_spoken = pickle.load(infile)
         self.cooccurrence = pd.read_csv('backend/data/character_cooccurrence.csv',
                                         index_col='Unnamed: 0')
@@ -103,14 +103,13 @@ class QuestionAgent:
                  for player in play_lines}
 
         # anchor character: TODO choose given conversation context,
-        # or add scaling factor to avoid unimportant characters
         anchor_char_idx = np.random.choice(len(play_lines),
                                            size=1,
                                            p=list(probs.values()),
                                            replace=False)
         anchor_char = list(probs.keys())[anchor_char_idx[0]]
 
-        # supporting character: could do this in a slightly more sophisiticated way
+        # supporting character: could do this in a slightly more sophisiticated way with probabilities, but it's fine without
         support_char = self.cooccurrence[anchor_char].idxmax()
 
         return anchor_char.title(), support_char.title()
@@ -228,7 +227,7 @@ class QuestionAgent:
         genre = self.setting_genre.loc[play]['Genre']
         #todo more sophisticated themes by play
         theme = np.random.choice(['ambition',
-                                  'the lust for power',
+                                  'lust for power',
                                   'appearance versus reality',
                                   'temptation',
                                   'guilt'])
