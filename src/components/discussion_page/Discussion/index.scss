@@ -6,11 +6,18 @@
     padding-right: 90px;
   }
 
-  .link {
-    font-size: 36px;
+  .link-container {
     position: fixed;
     left: 50px;
     bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    .link {
+      font-size: 36px;
+      &.print {
+        margin-left: 50px;
+      }
+    }
   }
 
   .fixed-title {
