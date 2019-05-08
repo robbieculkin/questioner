@@ -4,21 +4,49 @@ import './index.scss';
 
 import Entry from '../Entry';
 
-const process_html = text => text.split('\\n').map((item, key) => <span key={key}>{item}<br/></span>);
+const process_html = text => {
+  if (!text.includes('\\q'))
+    return text;
 
-const Card = ({ history, onTextEntry }) =>
+  text = text.split(/\\q|"/)
+  if (text.length == 4) {
+    return (
+      <div>
+        <span>{text[0]}</span>
+        <br/>
+        <br/>
+        <div className='quote-container'>
+          <span>MACBETH</span>
+          <br/>
+          <span className='quote-text'>
+            <span className='accent-symbol'>"</span>
+            {text[2]}
+            <span className='accent-symbol'>"</span>
+          </span>
+          <br/>
+          <span className='act-scene'>{text[3]}</span>
+        </div>
+      </div>
+    );
+  }
+}
+
+const Card = ({ history, onTextEntry, isReport }) =>
   <div className='card'>
     <div className='card-item'>
       {history.map(message =>
         <div className={`feed-item ${message.fromUser ? 'right' : 'left'}`} key={message.msgId}>
-          <div className={`${message.fromUser ? 'response' : 'question'} ${message.msgId === history[history.length - 1].msgId ? '' : 'old-message'}`}>
+          <div className={`${message.fromUser ? 'response' : 'question'} ${message.msgId === history[history.length - 1].msgId || isReport ? '' : 'old-message'}`}>
             {process_html(message.text)}
           </div>
         </div>
       )}
-      <div className='response entry'>
-        <Entry onTextEntry={onTextEntry} />
-      </div>
+      {isReport
+        ? ''
+        : <div className='response entry'>
+            <Entry onTextEntry={onTextEntry} />
+          </div>
+      }
     </div>
   </div>
 

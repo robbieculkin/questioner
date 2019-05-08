@@ -20,6 +20,7 @@ class Discussion extends Component {
       scrollY: window.scrollY,
       sessionId: props.location.state.sessionId,
       selectedPlay: props.location.state.selectedPlay,
+      isReport: false,
       history: [
         {
           msgId: 0,
@@ -31,6 +32,7 @@ class Discussion extends Component {
 
     this.handleTextEntry = this.handleTextEntry.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -69,6 +71,14 @@ class Discussion extends Component {
     const scrollY = window.scrollY;
 
     this.setState({ scrollY });
+  }
+
+  handleClick() {
+    this.setState({ isReport: true });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   handleTextEntry(text) {
@@ -128,19 +138,36 @@ class Discussion extends Component {
   }
 
   render() {
-    const { sessionId, history, scrollY } = this.state;
+    const { sessionId, history, scrollY, isReport } = this.state;
 
     return (
       <div className='discussion container right-container'>
         <div className='title'>
           <h1 className='big-title'>Questioner</h1>
-          <h1 className={`big-title fixed-title ${scrollY < 200 ? 'hidden-fade' : 'visible-fade'} `}>Questioner</h1>
+          {isReport
+            ? <h1 className='small-title'>Discussion Report</h1>
+            : ''
+          }
+          <div className={`fixed-title ${scrollY < 250 ? 'hidden-fade' : 'visible-fade'} `}>
+            <h1 className='big-title'>Questioner</h1>
+            {isReport
+              ? <h1 className='small-title left-align'>Discussion Report</h1>
+              : ''
+            }
+          </div>
         </div>
-        <Card history={history} onTextEntry={this.handleTextEntry} />
-        <Link to={{ pathname: '/report', state: { sessionId } }}
-              className='link'>
-          <div>End Discussion</div>
-        </Link>
+        <Card history={history} onTextEntry={this.handleTextEntry} isReport={isReport} />
+        {isReport
+          ? <div className='link'>
+              <Link to='/' className='link'>
+                <div>Home</div>
+              </Link>
+            </div>
+          : <div className='link'>
+              <div onClick={this.handleClick}>End Discussion</div>
+            </div>
+
+        }
       </div>
     );
   }
