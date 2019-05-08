@@ -129,7 +129,7 @@ class QuestionAgent:
 
         formatted_quote = f'"{actual_quote}" {act_scene}'
         # NOTE: \\q splits quote from other text
-        response = f'What do you think about this quote?\\q{formatted_quote}'
+        response = f"What is the significance of the following quote?\\q{formatted_quote}"
         return response
 
     @check_none('Hello')
