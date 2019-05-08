@@ -16,7 +16,7 @@ const process_html = text => {
         <br/>
         <br/>
         <div className='quote-container'>
-          <span>MACBETH</span>
+          <span>{text[1]}</span>
           <br/>
           <span className='quote-text'>
             <span className='accent-symbol'>"</span>

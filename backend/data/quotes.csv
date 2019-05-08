@@ -1,131 +1,113 @@
-,Play,ActScene,Quote,SearchResultCount
-0,Hamlet,III.I,"To be, or not to be: that is the question",297000027.0
-1,Hamlet,I.III,"Neither a borrower nor a lender be; For loan oft loses both itself and friend, and borrowing dulls the edge of husbandry",6510025.0
-2,Hamlet,I.III,This above all: to thine own self be true,56000023.0
-3,Hamlet,II.II,"Though this be madness, yet there is method in 't.",15300031.0
-4,Hamlet,I.II,That it should come to this!,250000027.0
-5,Hamlet,II.II,"There is nothing either good or bad, but thinking makes it so",39700033.0
-6,Hamlet,II.II,"What a piece of work is man! how noble in reason! how infinite in faculty! in form and moving how express and admirable! in action how like an angel! in apprehension how like a god! the beauty of the world, the paragon of animals! ",2240032.0
-7,Hamlet,III.II,"The lady protests too much, methinks.",18000029.0
-8,Hamlet,I.II,In my mind's eye,40100032.0
-9,Hamlet,I.II,"A little more than kin, and less than kind",16600029.0
-10,Hamlet,II.II,The play's the thing wherein I'll catch the conscience of the king,1120031.0
-11,Hamlet,I.III,"And it must follow, as the night the day, thou canst not then be false to any man",25200037.0
-12,Hamlet,II.I,This is the very ecstasy of love,6810028.0
-13,Hamlet,II.II,Brevity is the soul of wit,135000022.0
-14,Hamlet,II.II,"Doubt that the sun doth move, doubt truth to be a liar, but never doubt I love",24300027.0
-15,Hamlet,III.I,Rich gifts wax poor when givers prove unkind,14000029.0
-16,Hamlet,III.II,Do you think I am easier to be played on than a pipe?,7310035.0
-17,Hamlet,III.II,"I will speak daggers to her, but use none",9240033.0
-18,Hamlet,IV.V,"When sorrows come, they come not single spies, but in battalions",14900024.0
-19,As You Like It,II.VII,"All the world's a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts",4440040.0
-20,As You Like It,IV.I,Can one desire too much of a good thing?,4990025.0
-21,As You Like It,II.IV,I like this place and willingly could waste my time in it,7110025.0
-22,As You Like It,V.II,How bitter a thing it is to look into happiness through another man's eyes!,7570036.0
-23,As You Like It,II.VII,"Blow, blow, thou winter wind! Thou art not so unkind as man's ingratitude",7320039.0
-24,As You Like It,II.VII,True is it that we have seen better days,10700025.0
-25,As You Like It,IV.I,For ever and a day,258000237.0
-26,As You Like It,V.I,"The fool doth think he is wise, but the wise man knows himself to be a fool",17700031.0
-27,Richard III,I.I,Now is the winter of our discontent,9510027.0
-28,Richard III,V.IV,A horse! a horse! my kingdom for a horse!,15400037.0
-29,Richard III,V.III,"Conscience is but a word that cowards use, devised at first to keep the strong in awe",766037.0
-30,Richard III,III.I,"So wise so young, they say, do never live long",880024.0
-31,Richard III,III.IV,Off with his head!,18300035.0
-32,Richard III,IV.IV,"An honest tale speeds best, being plainly told",1390027.0
-33,Richard III,V.III,The king's name is a tower of strength,2230033.0
-34,Richard III,I.III,"The world is grown so bad, that wrens make prey where eagles dare not perch",667027.0
-35,Romeo and Juliet,II.II,"O Romeo, Romeo! wherefore art thou Romeo?",70900034.0
-36,Romeo and Juliet,II.II,"It is the east, and Juliet is the sun",70800045.0
-37,Romeo and Juliet,II.II,"Good Night, Good night! Parting is such sweet sorrow, that I shall say good night till it be morrow.",16000039.0
-38,Romeo and Juliet,II.II,What's in a name? That which we call a rose by any other name would smell as sweet,32600054.0
-39,Romeo and Juliet,II.III,Wisely and slow; they stumble that run fast,11700029.0
-40,Romeo and Juliet,V.III,Tempt not a desperate man,12700035.0
-41,Romeo and Juliet,I.V,For you and I are past our dancing days,4670037.0
-42,Romeo and Juliet,I.V,O! she doth teach the torches to burn bright,21300030.0
-43,Romeo and Juliet,I.V,It seems she hangs upon the cheek of night like a rich jewel in an Ethiope's ear,15600042.0
-44,Romeo and Juliet,II.II,"See, how she leans her cheek upon her hand! O that I were a glove upon that hand, that I might touch that cheek!",6240047.0
-45,Romeo and Juliet,IV.II,Not stepping o'er the bounds of modesty,2550029.0
-46,The Merchant of Venice,III.I,"If you prick us, do we not bleed? if you tickle us, do we not laugh? if you poison us, do we not die? and if you wrong us, shall we not revenge?",14600040.0
-47,The Merchant of Venice,I.III,The devil can cite Scripture for his purpose,7370034.0
-48,The Merchant of Venice,I.III,I like not fair terms and a villain's mind,3310034.0
-49,The Merry Wives of Windsor,II.II,"Why, then the world's mine oyster",409030.0
-50,The Merry Wives of Windsor,II.II,This is the short and the long of it,7750074.0
-51,The Merry Wives of Windsor,III.II,I cannot tell what the dickens his name is,2380035.0
-52,The Merry Wives of Windsor,III.V,As good luck would have it,4220073.0
-53,Measure for Measure,I.IV,"Our doubts are traitors, and make us lose the good we oft might win, by fearing to attempt",12200038.0
-54,Measure for Measure,II.I,"Some rise by sin, and some by virtue fall",7850033.0
-55,Measure for Measure,III.I,The miserable have no other medicine but only hope,7660034.0
-56,"Henry IV, Part 1",I.II,He will give the devil his due,829042.0
-57,"Henry IV, Part 1",V.IV,The better part of valour is discretion,1070030.0
-58,Henry IV Part 2,II.I,He hath eaten me out of house and home,567034.0
-59,Henry IV Part 2,III.I,Uneasy lies the head that wears a crown,4350087.0
-60,Henry IV Part 2,III.II,A man can die but once,634036.0
-61,Henry IV Part 2,II.II,"I do now remember the poor creature, small beer",282027.0
-62,Henry IV Part 2,III.II,We have heard the chimes at midnight,482032.0
-63,"Henry IV, Part III",II.II,"The smallest worm will turn, being trodden on",178026.0
-64,"Henry IV, Part III",V.VI,Suspicion always haunts the guilty mind; The thief doth fear each bush an officer,150028.0
-65,Henry VI Part 1,III.II,Delays have dangerous ends,131027.0
-66,Henry VI Part 1,V.II,"Of all base passions, fear is the most accursed",125030.0
-67,Henry VI Part 2,IV.II,"The first thing we do, let's kill all the lawyers",210030.0
-68,Henry VI Part 2,IV.I,Small things make base men proud,125030.0
-69,Henry VI Part 2,IV.I,True nobility is exempt from fear,254029.0
-70,Henry VI Part 3,III.III,"Having nothing, nothing can he lose",135025.0
-71,Timon of Athens,IV.II,We have seen better days,6110083.0
-72,Julius Caesar,III.II,"Friends, Romans, countrymen, lend me your ears; I come to bury Caesar, not to praise him",6720030.0
-73,Julius Caesar,I.II,"But, for my own part, it was Greek to me",6450037.0
-74,Julius Caesar,II.I,A dish fit for the gods,9880035.0
-75,Julius Caesar,III.I,"Cry ""Havoc,"" and let slip the dogs of war",20100033.0
-76,Julius Caesar,III.I,"Et tu, Brute!",81000033.0
-77,Julius Caesar,I.II,"Men at some time are masters of their fates: The fault, dear Brutus, is not in our stars, but in ourselves, that we are underlings",9080045.0
-78,Julius Caesar,III.II,"Not that I loved Caesar less, but that I loved Rome more",17700034.0
-79,Julius Caesar,I.II,Beware the ides of March,90200033.0
-80,Julius Caesar,V.V,This was the noblest Roman of them all,10300042.0
-81,Julius Caesar,III.II,"When that the poor have cried, Caesar hath wept: Ambition should be made of sterner stuff",5830035.0
-82,Julius Caesar,I.II,Yond Cassius has a lean and hungry look; He thinks too much: such men are dangerous,8190041.0
-83,Julius Caesar,III.II,"For Brutus is an honourable man; So are they all, all honourable men",7640047.0
-84,Julius Caesar,III.II,"As he was valiant, I honor him; but, as he was ambitious, I slew him",2330034.0
-85,Julius Caesar,II.II,"Cowards die many times before their deaths; The valiant never taste of death but once. Of all the wonders that I yet have heard, it seems to me most strange that men should fear; Seeing that death, a necessary end, will come when it will come",4470056.0
-86,Macbeth,II.III,There's daggers in men's smiles,1660054.0
-87,Macbeth,III.II,What's done is done,2820047.0
-88,Macbeth,I.VII,I dare do all that may become a man; Who dares do more is none,8710045.0
-89,Macbeth,I.I,"Fair is foul, and foul is fair",470000036.0
-90,Macbeth,V.VIII,I bear a charmed life,7060036.0
-91,Macbeth,I.V,Yet do I fear thy nature; It is too full o' the milk of human kindness.,5550040.0
-92,Macbeth,II.II,"Will all great Neptune's ocean wash this blood clean from my hand? No, this my hand will rather the multitudinous seas incarnadine, making the green one red",12700051.0
-93,Macbeth,IV.I,"Double, double toil and trouble; Fire burn, and cauldron bubble.",37900054.0
-94,Macbeth,V.I,"Out, damned spot! out, I say!",25800035.0
-95,Macbeth,V.I,All the perfumes of Arabia will not sweeten this little hand.,28800035.0
-96,Macbeth,I.I,"When shall we three meet again in thunder, lightning, or in rain? When the hurlyburly's done, When the battle's lost and won",1070041.0
-97,Macbeth,I.III,"If chance will have me king, why, chance may crown me",12200036.0
-98,Macbeth,I.IV,"Nothing in his life became him like the leaving it; he died as one that had been studied in his death to throw away the dearest thing he owed, as't were a careless trifle",422041.0
-99,Macbeth,I.V,"Look like the innocent flower, but be the serpent under't.",40000036.0
-100,Macbeth,I.VII,"I have no spur to prick the sides of my intent, but only vaulting ambition, which o'erleaps itself, and falls on the other.",10100056.0
-101,Macbeth,II.I,"Is this a dagger which I see before me, The handle toward my hand?",15100034.0
-102,Macbeth,V.V,"Out, out, brief candle! Life's but a walking shadow, a poor player that struts and frets his hour upon the stage and then is heard no more: it is a tale told by an idiot, full of sound and fury, signifying nothing.",9460045.0
-103,King Lear,I.IV,How sharper than a serpent's tooth it is to have a thankless child!,9510037.0
-104,King Lear,III.II,I am a man more sinned against than sinning,4650033.0
-105,King Lear,I.I,My love's more richer than my tongue,1700036.0
-106,King Lear,I.I,Nothing will come of nothing.,13700037.0
-107,King Lear,I.IV,"Have more than thou showest, speak less than thou knowest, lend less than thou owest",3050035.0
-108,King Lear,IV.I,"The worst is not, So long as we can say, 'This is the worst.' ",9390051.0
-109,Othello,IV.III,‘T’is neither here nor there.,2780051.0
-110,Othello,I.I,I will wear my heart upon my sleeve for daws to peck at,12500055.0
-111,Othello,I.III,To mourn a mischief that is past and gone is the next way to draw new mischief on,5770054.0
-112,Othello,I.III,The robbed that smiles steals something from the thief,5730040.0
-113,Antony and Cleopatra,I.V,"My salad days, when I was green in judgment.",5190046.0
-114,Cymbeline,III.III,The game is up.,7080070.0
-115,Cymbeline,III.III,I have not slept one wink.,2290033.0
-116,Twelfth Night,II.V,"Be not afraid of greatness: some are born great, some achieve greatness and some have greatness thrust upon them",6960036.0
-117,Twelfth Night,III.I,"Love sought is good, but giv'n unsought is better",583036.0
-118,Henry V,III.II,Men of few words are the best men,924036.0
-119,A Midsummer Night's Dream,I.I,The course of true love never did run smooth,42900040.0
-120,A Midsummer Night's Dream,I.I,"Love looks not with the eyes, but with the mind, and therefore is winged Cupid painted blind",17000042.0
-121,Much Ado About Nothing,III.II,Everyone can master a grief but he that has it,1140060.0
-122,Titus Andronicus,I.I,These words are razors to my wounded heart,4580047.0
-123,The Winter's Tale,III.II,What's gone and what's past help should be past grief,217037.0
-124,The Winter's Tale,I.I,You pay a great deal too dear for what's given freely,2760045.0
-125,The Taming of the Shrew,III.IV,Out of the jaws of death,12700101.0
-126,The Taming of the Shrew,V.I,Thus the whirligig of time brings in his revenges,885034.0
-127,The Taming of the Shrew,V.I,For the rain it raineth every day,2310056.0
-128,Troilus and Cressida,II.III,"The common curse of mankind, - folly and ignorance",1780045.0
-129,Coriolanus,II.I,Nature teaches beasts to know their friends,12900049.0
+,Play,ActScene,Quote,SearchResultCount,player
+0,Hamlet,III.I,"To be, or not to be: that is the question",297000027.0,HAMLET
+1,Hamlet,I.III,"Neither a borrower nor a lender be; For loan oft loses both itself and friend, and borrowing dulls the edge of husbandry",6510025.0,POLONIUS
+2,Hamlet,I.III,This above all: to thine own self be true,56000023.0,POLONIUS
+3,Hamlet,II.II,"Though this be madness, yet there is method in 't.",15300031.0,POLONIUS
+4,Hamlet,I.II,That it should come to this!,250000027.0,HAMLET
+5,Hamlet,II.II,"There is nothing either good or bad, but thinking makes it so",39700033.0,HAMLET
+6,Hamlet,II.II,"What a piece of work is man! how noble in reason! how infinite in faculty! in form and moving how express and admirable! in action how like an angel! in apprehension how like a god! the beauty of the world, the paragon of animals! ",2240032.0,HAMLET
+7,Hamlet,III.II,"The lady protests too much, methinks.",18000029.0,GERTRUDE
+8,Hamlet,I.II,In my mind's eye,40100032.0,HAMLET
+9,Hamlet,I.II,"A little more than kin, and less than kind",16600029.0,HAMLET
+10,Hamlet,II.II,The play's the thing wherein I'll catch the conscience of the king,1120031.0,HAMLET
+11,Hamlet,I.III,"And it must follow, as the night the day, thou canst not then be false to any man",25200037.0,POLONIUS
+12,Hamlet,II.I,This is the very ecstasy of love,6810028.0,POLONIUS
+13,Hamlet,II.II,Brevity is the soul of wit,135000022.0,POLONIUS
+14,Hamlet,II.II,"Doubt that the sun doth move, doubt truth to be a liar, but never doubt I love",24300027.0,POLONIUS
+15,Hamlet,III.I,Rich gifts wax poor when givers prove unkind,14000029.0,OPHELIA
+16,Hamlet,III.II,Do you think I am easier to be played on than a pipe?,7310035.0,HAMLET
+17,Hamlet,III.II,"I will speak daggers to her, but use none",9240033.0,HAMLET
+18,Hamlet,IV.V,"When sorrows come, they come not single spies, but in battalions",14900024.0,CLAUDIUS
+19,As You Like It,II.VII,"All the world's a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts",4440040.0,JAQUES
+20,As You Like It,IV.I,Can one desire too much of a good thing?,4990025.0,ROSALIND
+21,As You Like It,II.IV,I like this place and willingly could waste my time in it,7110025.0,CELIA
+22,As You Like It,V.II,How bitter a thing it is to look into happiness through another man's eyes!,7570036.0,ORLANDO
+23,As You Like It,II.VII,"Blow, blow, thou winter wind! Thou art not so unkind as man's ingratitude",7320039.0,AMIENS
+24,As You Like It,II.VII,True is it that we have seen better days,10700025.0,DUKE SENIOR
+25,As You Like It,IV.I,Forever and a day,258000237.0,ORLANDO
+26,As You Like It,V.I,"The fool doth think he is wise, but the wise man knows himself to be a fool",17700031.0,TOUCHSTONE
+27,Richard III,I.I,Now is the winter of our discontent,9510027.0,RICHARD
+28,Richard III,V.IV,A horse! a horse! my kingdom for a horse!,15400037.0,RICHARD
+29,Richard III,V.III,"Conscience is but a word that cowards use, devised at first to keep the strong in awe",766037.0,LAUNCELOT
+30,Richard III,III.I,"So wise so young, they say, do never live long",880024.0,RICHARD
+31,Richard III,III.IV,Off with his head!,18300035.0,RICHARD
+32,Richard III,IV.IV,"An honest tale speeds best, being plainly told",1390027.0,QUEEN ELIZABETH
+33,Richard III,V.III,The king's name is a tower of strength,2230033.0,RICHARD
+34,Richard III,I.III,"The world is grown so bad, that wrens make prey where eagles dare not perch",667027.0,RICHARD
+35,Romeo and Juliet,II.II,"O Romeo, Romeo! wherefore art thou Romeo?",70900034.0,JULIET
+36,Romeo and Juliet,II.II,"It is the east, and Juliet is the sun",70800045.0,ROMEO
+37,Romeo and Juliet,II.II,"Good Night, Good night! Parting is such sweet sorrow, that I shall say good night till it be morrow.",16000039.0,THIRD SOLDIER
+38,Romeo and Juliet,II.II,What's in a name? That which we call a rose by any other name would smell as sweet,32600054.0,JULIET
+39,Romeo and Juliet,II.III,Wisely and slow; they stumble that run fast,11700029.0,FRIAR LAWRENCE
+40,Romeo and Juliet,V.III,Tempt not a desperate man,12700035.0,ROMEO
+41,Romeo and Juliet,I.V,For you and I are past our dancing days,4670037.0,CAPULET
+42,Romeo and Juliet,I.V,Oh! she doth teach the torches to burn bright,21300030.0,ROMEO
+43,Romeo and Juliet,I.V,It seems she hangs upon the cheek of night like a rich jewel in an Ethiope's ear,15600042.0,ROMEO
+44,Romeo and Juliet,II.II,"See, how she leans her cheek upon her hand! O that I were a glove upon that hand, that I might touch that cheek!",6240047.0,ROMEO
+45,Romeo and Juliet,IV.II,Not stepping o'er the bounds of modesty,2550029.0,JULIET
+46,The Merchant of Venice,III.I,"If you prick us, do we not bleed? if you tickle us, do we not laugh? if you poison us, do we not die? and if you wrong us, shall we not revenge?",14600040.0,SHYLOCK
+47,The Merchant of Venice,I.III,The devil can cite Scripture for his purpose,7370034.0,ANTONIO
+48,The Merchant of Venice,I.III,I like not fair terms and a villain's mind,3310034.0,BASSANIO
+49,Measure for Measure,I.IV,"Our doubts are traitors, and make us lose the good we oft might win, by fearing to attempt",12200038.0,LUCIO 
+50,Measure for Measure,II.I,"Some rise by sin, and some by virtue fall",7850033.0,ESCALUS 
+51,Measure for Measure,III.I,The miserable have no other medicine but only hope,7660034.0,CLAUDIO 
+52,"Henry IV, Part 1",I.II,He will give the devil his due,829042.0,PRINCE HENRY
+53,"Henry IV, Part 1",V.IV,The better part of valour is discretion,1070030.0,FALSTAFF
+54,Henry IV Part 2,II.I,He hath eaten me out of house and home,567034.0,MISTRESS QUICKLY
+55,Henry IV Part 2,III.I,Uneasy lies the head that wears a crown,4350087.0,KING
+56,Henry IV Part 2,III.II,A man can die but once,634036.0,FEEBLE
+57,Henry IV Part 2,II.II,"I do now remember the poor creature, small beer",282027.0,PRINCE HENRY
+58,Henry IV Part 2,III.II,We have heard the chimes at midnight,482032.0,COMINIUS
+59,Timon of Athens,IV.II,We have seen better days,6110083.0,DUKE SENIOR
+60,Julius Caesar,III.II,"Friends, Romans, countrymen, lend me your ears; I come to bury Caesar, not to praise him",6720030.0,ANTONY
+61,Julius Caesar,I.II,"But, for mine own part, it was Greek to me",6450037.0,HOTSPUR
+62,Julius Caesar,II.I,A dish fit for the gods,9880035.0,BRUTUS
+63,Julius Caesar,III.I,"Cry ""Havoc,"" and let slip the dogs of war",20100033.0,ANTONY
+64,Julius Caesar,III.I,"Et tu, Bruté!",81000033.0,CAESAR
+65,Julius Caesar,I.II,"Men at some time are masters of their fates: The fault, dear Brutus, is not in our stars, but in ourselves, that we are underlings",9080045.0,CASSIUS
+66,Julius Caesar,III.II,"Not that I loved Caesar less, but that I loved Rome more",17700034.0,BRUTUS
+67,Julius Caesar,I.II,Beware the ides of March,90200033.0,SOOTHSAYER
+68,Julius Caesar,V.V,This was the noblest Roman of them all,10300042.0,ANTONY
+69,Julius Caesar,III.II,"When that the poor have cried, Caesar hath wept: Ambition should be made of sterner stuff",5830035.0,ANTONY
+70,Julius Caesar,I.II,Yond Cassius has a lean and hungry look; He thinks too much: such men are dangerous,8190041.0,CAESAR
+71,Julius Caesar,III.II,"For Brutus is an honourable man; So are they all, all honourable men",7640047.0,ANTONY
+72,Julius Caesar,III.II,"As he was valiant, I honor him; but, as he was ambitious, I slew him",2330034.0,BRUTUS
+73,Julius Caesar,II.II,"Cowards die many times before their deaths; The valiant never taste of death but once. Of all the wonders that I yet have heard, it seems to me most strange that men should fear; Seeing that death, a necessary end, will come when it will come",4470056.0,CAESAR
+74,Macbeth,II.III,There's daggers in men's smiles,1660054.0,DONALBAIN
+75,Macbeth,III.II,What's done is done,2820047.0,LADY MACBETH
+76,Macbeth,I.VII,I dare do all that may become a man; Who dares do more is none,8710045.0,MACBETH
+77,Macbeth,I.I,"Fair is foul, and foul is fair",470000036.0,ALL
+78,Macbeth,I.V,Yet do I fear thy nature; It is too full o' the milk of human kindness.,5550040.0,LADY MACBETH
+79,Macbeth,II.II,"Will all great Neptune's ocean wash this blood clean from my hand? No, this my hand will rather the multitudinous seas incarnadine, making the green one red",12700051.0,MACBETH
+80,Macbeth,IV.I,"Double, double toil and trouble; Fire burn, and cauldron bubble.",37900054.0,ALL
+81,Macbeth,V.I,"Out, damned spot! out, I say!",25800035.0,LADY MACBETH
+82,Macbeth,V.I,All the perfumes of Arabia will not sweeten this little hand.,28800035.0,LADY MACBETH
+83,Macbeth,I.I,"When shall we three meet again in thunder, lightning, or in rain? When the hurlyburly's done, When the battle's lost and won",1070041.0,FIRST WITCH
+84,Macbeth,I.III,"If chance will have me king, why, chance may crown me",12200036.0,MACBETH
+85,Macbeth,I.IV,"Nothing in his life became him like the leaving it; he died as one that had been studied in his death to throw away the dearest thing he owed, as't were a careless trifle",422041.0,MALCOLM
+86,Macbeth,I.V,"Look like th' innocent flower, but be the serpent under 't.",40000036.0,LADY MACBETH
+87,Macbeth,I.VII,"I have no spur to prick the sides of my intent, but only vaulting ambition, which o'erleaps itself, and falls on the other.",10100056.0,MACBETH
+88,Macbeth,II.I,"Is this a dagger which I see before me, The handle toward my hand?",15100034.0,MACBETH
+89,Macbeth,V.V,"Out, out, brief candle! Life's but a walking shadow, a poor player that struts and frets his hour upon the stage and then is heard no more: it is a tale told by an idiot, full of sound and fury, signifying nothing.",9460045.0,MACBETH
+90,King Lear,I.IV,How sharper than a serpent's tooth it is to have a thankless child!,9510037.0,LEAR
+91,King Lear,III.II,I am a man more sinned against than sinning,4650033.0,LEAR
+92,King Lear,I.I,Nothing will come of nothing.,13700037.0,LEAR
+93,King Lear,I.IV,"Have more than thou showest, speak less than thou knowest, lend less than thou owest",3050035.0,FOOL
+94,King Lear,IV.I,"The worst is not, So long as we can say, 'This is the worst.' ",9390051.0,EDGAR
+95,Othello,IV.III,'T'is neither here nor there.,2780051.0,EMILIA
+96,Othello,I.I,I will wear my heart upon my sleeve for daws to peck at,12500055.0,IAGO
+97,Othello,I.III,To mourn a mischief that is past and gone is the next way to draw new mischief on,5770054.0,DUKE
+98,Othello,I.III,The robbed that smiles steals something from the thief,5730040.0,DUKE
+99,Antony and Cleopatra,I.V,"My salad days, when I was green in judgment.",5190046.0,CLEOPATRA
+100,Twelfth Night,II.V,"Be not afraid of greatness: some are born great, some achieve greatness and some have greatness thrust upon them",6960036.0,MALVOLIO
+101,Twelfth Night,III.I,"Love sought is good, but giv'n unsought is better",583036.0,OLIVIA
+102,Henry V,III.II,Men of few words are the best men,924036.0,BOY
+103,A Midsummer Night's Dream,I.I,The course of true love never did run smooth,42900040.0,LYSANDER
+104,A Midsummer Night's Dream,I.I,"Love looks not with the eyes, but with the mind, and therefore is winged Cupid painted blind",17000042.0,HELENA
+105,Much Ado About Nothing,III.II,Everyone can master a grief but he that has it,1140060.0,BENEDICK
+106,The Winter's Tale,III.II,What's gone and what's past help should be past grief,217037.0,PAULINA
+107,The Winter's Tale,I.I,You pay a great deal too dear for what's given freely,2760045.0,CAMILLO
+108,The Taming of the Shrew,III.IV,Out of the jaws of death,12700101.0,ANTONIO
+109,The Taming of the Shrew,V.I,Thus the whirligig of time brings in his revenges,885034.0,FOOL
+110,The Taming of the Shrew,V.I,For the rain it raineth every day,2310056.0,FOOL
+111,Coriolanus,II.I,Nature teaches beasts to know their friends,12900049.0,SICINIUS

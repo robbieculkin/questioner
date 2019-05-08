@@ -121,6 +121,7 @@ class QuestionAgent:
         available_quotes = self.get_available_quotes(session_data['sessionId'], play)
         selected_quote = available_quotes.loc[np.random.choice(available_quotes.index)]
 
+        player = selected_quote['player']
         actual_quote = selected_quote['Quote']
         act, scene = re.match(r'([IVX]+)\.([IVX]+)', selected_quote['ActScene']).groups()
         act_scene = f'(Act {act}, Scene {scene})'
@@ -129,7 +130,7 @@ class QuestionAgent:
 
         formatted_quote = f'"{actual_quote}" {act_scene}'
         # NOTE: \\q splits quote from other text
-        response = f"What is the significance of the following quote?\\q{formatted_quote}"
+        response = f"What is the significance of the following quote?\\q{player} {formatted_quote}"
         return response
 
     @check_none('Hello')
