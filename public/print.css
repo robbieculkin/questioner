@@ -1,0 +1,69 @@
+@media print {
+  body {
+    margin: 10mm !important;
+  }
+
+  .hidden-fade, .visible-fade, .link-container, .link, .entry {
+    display: none !important;
+  }
+
+  .title {
+    width: 700px !important;
+    text-align: center !important;
+  }
+
+  .big-title {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .small-title {
+    text-align: center !important;
+    margin-left: 25px !important;
+    margin-top: -20px !important;
+  }
+
+  .right-container {
+    align-items: flex-start !important;
+    padding-right: 0 !important;
+    padding-left: 10px !important;
+  }
+
+  .container {
+    padding-top: 0 !important;
+  }
+
+  .card {
+    width: 100% !important;
+    padding: 10px 0 !important;
+  }
+
+  .card-item {
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-bottom: 0 !important;
+  }
+
+  .question {
+    color: black !important;
+    font-size: 22px !important;
+    margin-bottom: 0 !important;
+    width: 700px !important;
+  }
+
+  .response {
+    color: black !important;
+    font-size: 22px !important;
+    width: 700px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .quote-container {
+    border-right: none !important;
+    border-left: 3px solid #333 !important;
+    margin-left: 2px !important;
+    padding-left: 15px !important;
+    margin-top: -20px !important;
+    margin-bottom: 5px !important;
+  }
+}

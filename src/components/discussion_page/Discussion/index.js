@@ -33,6 +33,7 @@ class Discussion extends Component {
     this.handleTextEntry = this.handleTextEntry.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handlePrint = this.handlePrint.bind(this);
   }
 
   componentDidMount() {
@@ -74,11 +75,20 @@ class Discussion extends Component {
   }
 
   handleClick() {
-    this.setState({ isReport: true });
+    const { history } = this.state;
+
+    if (!history[history.length - 1].fromUser)
+      history.pop();
+
+    this.setState({ isReport: true, history });
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
+  }
+
+  handlePrint() {
+    window.print();
   }
 
   handleTextEntry(text) {
@@ -138,7 +148,7 @@ class Discussion extends Component {
   }
 
   render() {
-    const { sessionId, history, scrollY, isReport } = this.state;
+    const { history, scrollY, isReport } = this.state;
 
     return (
       <div className='discussion container right-container'>
@@ -158,15 +168,15 @@ class Discussion extends Component {
         </div>
         <Card history={history} onTextEntry={this.handleTextEntry} isReport={isReport} />
         {isReport
-          ? <div className='link'>
+          ? <div className='link-container'>
               <Link to='/' className='link'>
                 <div>Home</div>
               </Link>
+              <div className='link print' onClick={this.handlePrint}>Print</div>
             </div>
-          : <div className='link'>
-              <div onClick={this.handleClick}>End Discussion</div>
+          : <div className='link-container'>
+              <div onClick={this.handleClick} className='link'>End Discussion</div>
             </div>
-
         }
       </div>
     );
