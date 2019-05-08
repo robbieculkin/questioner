@@ -12,12 +12,29 @@
     .old-message {
       transition: color 0.5s ease-in-out;
       color: #666;
+      .quote-container {
+        border-right: 4px solid rgba(46, 170, 77, 0.5) !important;
+      }
     }
 
     .question {
       font-weight: 600;
       font-style: italic;
       margin-bottom: 30px;
+
+      .quote-container {
+        padding-right: 20px;
+        border-right: 4px solid rgb(46, 170, 77);
+        .accent-symbol {
+          // color: rgb(46, 170, 77);
+        }
+        .quote-text {
+          font-weight: 400;
+        }
+        .act-scene {
+
+        }
+      }
     }
 
     .response {

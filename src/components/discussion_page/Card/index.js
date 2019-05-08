@@ -4,7 +4,32 @@ import './index.scss';
 
 import Entry from '../Entry';
 
-const process_html = text => text.split('\\n').map((item, key) => <span key={key}>{item}<br/></span>);
+const process_html = text => {
+  if (!text.includes('\\q'))
+    return text;
+
+  text = text.split(/\\q|"/)
+  if (text.length == 4) {
+    return (
+      <div>
+        <span>{text[0]}</span>
+        <br/>
+        <br/>
+        <div className='quote-container'>
+          <span>MACBETH</span>
+          <br/>
+          <span className='quote-text'>
+            <span className='accent-symbol'>"</span>
+            {text[2]}
+            <span className='accent-symbol'>"</span>
+          </span>
+          <br/>
+          <span className='act-scene'>{text[3]}</span>
+        </div>
+      </div>
+    );
+  }
+}
 
 const Card = ({ history, onTextEntry }) =>
   <div className='card'>

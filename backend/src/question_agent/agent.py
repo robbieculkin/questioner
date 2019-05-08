@@ -128,7 +128,8 @@ class QuestionAgent:
         self.remove_quote_user(selected_quote.name, session_data['sessionId'])
 
         formatted_quote = f'"{actual_quote}" {act_scene}'
-        response = f'What do you think about this quote?\\n\\n{formatted_quote}'
+        # NOTE: \\q splits quote from other text
+        response = f'What do you think about this quote?\\q{formatted_quote}'
         return response
 
     @check_none('Hello')
