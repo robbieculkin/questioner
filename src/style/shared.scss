@@ -21,7 +21,7 @@
 }
 
 .big-title {
-  margin-bottom: .5em;
+  margin-bottom: .3em;
   line-height: .9em;
   letter-spacing: -.0125em;
   font-size: 72px;
@@ -29,9 +29,17 @@
   color: rgb(51, 51, 51);
 }
 
+.small-title {
+  margin-top: 0;
+  text-align: right;
+  font-size: 24px;
+  color: rgb(51, 51, 51);
+}
+
 .link {
   &:hover {
     font-style: italic;
+    cursor: pointer;
   }
 
   font-size: 24px;

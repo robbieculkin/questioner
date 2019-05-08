@@ -31,19 +31,22 @@ const process_html = text => {
   }
 }
 
-const Card = ({ history, onTextEntry }) =>
+const Card = ({ history, onTextEntry, isReport }) =>
   <div className='card'>
     <div className='card-item'>
       {history.map(message =>
         <div className={`feed-item ${message.fromUser ? 'right' : 'left'}`} key={message.msgId}>
-          <div className={`${message.fromUser ? 'response' : 'question'} ${message.msgId === history[history.length - 1].msgId ? '' : 'old-message'}`}>
+          <div className={`${message.fromUser ? 'response' : 'question'} ${message.msgId === history[history.length - 1].msgId || isReport ? '' : 'old-message'}`}>
             {process_html(message.text)}
           </div>
         </div>
       )}
-      <div className='response entry'>
-        <Entry onTextEntry={onTextEntry} />
-      </div>
+      {isReport
+        ? ''
+        : <div className='response entry'>
+            <Entry onTextEntry={onTextEntry} />
+          </div>
+      }
     </div>
   </div>
 
